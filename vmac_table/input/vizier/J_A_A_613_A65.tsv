@@ -1,0 +1,355 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-11T20:38:53 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-11T20:38:53	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/A%2BA/613/A65&-out.max=unlimited&-out.all&-out.add=_RA,_DE	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+
+#RESOURCE=yCat_36130065
+#Name: J/A+A/613/A65
+#Title: Spectroscopic parameters of O-type stars (Holgado+, 2018)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/613/a65	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/613/a65	    IVOID of underlying data collection
+#INFO	creator=Holgado G.	    First author or institution
+#INFO	cites=bibcode:2018A&A...613A..65H	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2018	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/613/A65	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36130065	    Dataset identifier that can be used for citation
+#INFO	publication_date=2019-06-03	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_A_A_613_A65_tabled1:
+#Name: J/A+A/613/A65/tabled1
+#Title: Complete list of stars considered in this work
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Target	(a17)	Name of the star	[ucd=meta.id;meta.main]
+#Column	OName	(a14)	Alternative name of the star	[ucd=meta.id]
+#Column	SpType	(A4)	Spectral type	[ucd=src.spType]
+#Column	LumClass	(a5)	Luminosity class	[ucd=src.class.luminosity]
+#Column	NOT	(I3)	Number of available spectra with NOT	[ucd=meta.number]
+#Column	Mercator	(I3)	Number of available spectra with Mercator	[ucd=meta.number]
+#Column	FEROS/MPI2.2	(I2)	Number of available spectra with FEROS	[ucd=meta.number]
+#Column	CAFE	(I2)	Number of available spectra with CAFE	[ucd=meta.number]
+#Column	SpecUsed	(a37)	Spectra used in the analysis	[ucd=meta.id;meta.file]
+#Column	JD	(F8.3)	? Julian date (JD-2450000)	[ucd=time.epoch]
+#Column	S/Nc	(I3)	? Signal-to-noise of the continuum	[ucd=stat.snr]
+#Column	Line	(A18)	Line used for the broadening parameter	[ucd=meta.id;spect.line]
+#Column	S/Nl	(I3)	? Signal-to-noise of the line	[ucd=stat.snr]
+#Column	EW	(I3)	? Equivalent width of the line (m{AA})	[ucd=spect.line.eqWidth]
+#Column	RV	(I4)	? Radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(I1)	? rms uncertainty on RV	[ucd=stat.error]
+#Column	RVlit	(F6.1)	? Radial velocity in literature	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RVlit	(F4.1)	? rms uncertainty on RVlit	[ucd=stat.error]
+#Column	r_RVlit	(A2)	[* ] Reference for RVlit (1)	[ucd=meta.ref;pos.frame]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+_RA	_DE	recno	Target	OName	SpType	LumClass	NOT	Mercator	FEROS/MPI2.2	CAFE	SpecUsed	JD	S/Nc	Line	S/Nl	EW	RV	e_RV	RVlit	e_RVlit	r_RVlit	SimbadName
+deg	deg	 	 	 	 	 	 	 	 	 	 	d	 	 	 	0.1pm	km/s	km/s	km/s	km/s	 	
+---------	---------	--------	-----------------	--------------	----	-----	---	---	--	--	-------------------------------------	--------	---	------------------	---	---	----	-	------	----	--	----------------
+025.21981	+64.17309	       1	HD 10125         	---           	O9.7	II   	  3	  0	 0	 0	HD10125_20110115_232529_N_V25000     	5577.485	123	OIII {lambda}5592 	264	146	 -48	6	 -38.0	 4.5	* 	HD 10125
+030.62553	+55.62399	       2	HD 12323         	---           	O9.2	V    	  2	  0	 0	 0	HD12323_20121225_225051_N_V25000     	6287.460	109	OIII {lambda}5592 	167	 92	 -17	7	      	    	  	HD 12323
+032.26031	+57.93221	       3	HD 12993         	---           	O6.5	V    	  3	  0	 0	 0	HD12993_20110912_054359_N_V25000     	5816.748	125	OIII {lambda}5592 	197	175	 -87	3	-101.0	 6.8	**	HD 12993
+035.72622	+41.47992	       4	HD 14633 AaAb    	---           	O8.5	V    	  3	  1	 0	 2	HD14633_20091113_024720_N_V46000     	5148.632	187	OIII {lambda}5592 	272	131	 -34	5	 -36.8	 0.9	* 	HD 14633
+036.69579	+58.87587	       5	HD 14947         	---           	O4.5	Iab/I	  3	  0	 0	 0	HD14947_20081108_231044_N_V46000     	4779.480	133	OIII {lambda}5592 	281	 76	 -44	1	 -56.3	 0.9	* 	HD 14947
+038.20592	+61.37836	       6	HD 15570         	---           	O4  	Iab/I	  3	  0	 0	 0	HD15570_20081107_004909_N_V46000     	4777.549	 95	NV {lambda}4603   	158	 95	 -41	9	 -24.0	 0.9	* 	HD 15570
+038.33578	+61.52172	       7	HD 15629         	---           	O4.5	V    	  3	  0	 8	 0	HD15629_20110913_020206_N_V25000     	5817.593	123	OIII {lambda}5592 	254	153	 -68	1	 -55.0	 9.4	**	HD 15629
+040.71677	+56.90457	       8	HD 16691         	---           	O4  	Iab/I	  3	  0	 0	 0	HD16691_20110913_032931_N_V25000     	5817.654	104	NV {lambda}4603   	133	184	 -59	2	      	    	  	HD 16691
+041.05298	+56.65757	       9	HD 16832         	---           	O9.2	III  	  2	  0	 0	 0	HD16832_20110912_045551_N_V25000     	5816.714	102	OIII {lambda}5592 	230	206	 -25	2	      	    	  	HD 16832
+042.94916	+57.04846	      10	HD 17603         	---           	O7.5	Ib   	  2	  0	 0	 0	HD17603_20110114_215807_N_V25000     	5576.428	103	OIII {lambda}5592 	247	302	 -25	5	      	    	  	HD 17603
+058.91009	+52.64132	      11	HD 24431         	---           	O9  	III  	  4	  0	 0	 5	HD24431_20081109_032702_N_V46000     	4779.652	163	OIII {lambda}5592 	302	238	  -4	2	  -8.6	 1.3	* 	HD 24431
+073.51254	+66.34268	      12	HD 30614         	alpha Cam     	O9  	Ia   	  8	 15	 0	 2	HD30614_20111109_033231_M_V85000     	5874.653	191	OIII {lambda}5592 	248	298	  10	5	      	    	  	HD 30614
+079.07562	+34.31232	      13	HD 34078         	AE Aur        	O9.5	V    	  5	  1	 0	 2	HD34078_20081109_012706_N_V46000     	4779.567	154	OIII {lambda}5592 	261	132	  51	3	  56.7	 0.6	**	HD 34078
+080.17951	+37.43867	      14	HD 34656         	---           	O7.5	II   	  4	 58	 0	 4	HD34656_20131218_234051_M_V85000     	6645.497	171	OIII {lambda}5592 	185	232	 -12	2	  -5.0	 1.9	* 	HD 34656
+081.90060	+34.75528	      15	HD 35619         	---           	O7.5	V    	  5	  0	 0	 0	HD35619_20110913_041546_N_V25000     	5817.684	139	OIII {lambda}5592 	210	211	   0	3	      	    	  	HD 35619
+083.00167	-00.29909	      16	HD 36486 AaAb    	delta Ori AaA 	O9.5	II   	  3	  7	 2	19	HD36486_20090501_231005_F_V48000     	4953.461	198	OIII {lambda}5592 	186	184	  36	6	  20.3	 1.9	* 	HD 36486
+082.98275	-07.30154	      17	HD 36512         	upsilon Ori   	O9.7	V    	  3	  1	 0	 4	HD36512_20111109_032351_M_V85000     	5874.647	210	OIII {lambda}5592 	230	 76	  16	2	  17.1	 2.5	* 	HD 36512
+083.78449	+09.93416	      18	HD 36861 A       	lambda Ori    	O8  	III  	 50	124	 0	 2	HD36861_20140211_200754_M_V85000     	6700.343	252	OIII {lambda}5592 	320	322	  34	2	  30.1	 1.4	* 	HD 36861
+086.49956	-32.30643	      19	HD 38666         	 mu Col       	O9.5	V    	  0	  0	 2	 0	HD38666_20090503_231437_F_V48000     	4955.467	198	OIII {lambda}5592 	150	139	 106	5	 109.0	 1.8	* 	HD 38666
+092.41489	+20.48763	      20	HD 42088         	---           	O6  	V    	  3	  1	 0	 3	HD42088_20110116_013309_N_V46000     	5577.575	160	OIII {lambda}5592 	206	232	  15	1	  23.2	 1.8	* 	HD 42088
+097.96888	+05.03311	      21	HD 46149         	---           	O8.5	V    	  3	  0	 2	 3	HD46149_20121224_025709_N_V46000     	6285.634	142	OIII {lambda}5592 	266	145	  23	3	  36.6	 1.7	* 	HD 46149
+097.98133	+04.94286	      22	HD 46150         	---           	O5  	V    	 15	  2	 2	 2	HD46150_20081108_020753_N_V46000     	4778.595	182	OIII {lambda}5592 	287	110	  37	1	  35.6	 1.7	* 	HD 46150
+098.04364	+04.96662	      23	HD 46202         	---           	O9.2	V    	  4	  0	 0	 0	HD46202_20130130_002935_N_V25000     	6322.530	138	OIII {lambda}5592 	257	132	  34	2	      	    	  	HD 46202
+098.03878	+04.82353	      24	HD 46223         	---           	O4  	V    	  5	  1	 1	 3	HD46223_20081107_050512_N_V46000     	4777.720	160	OIII {lambda}5592 	231	129	  38	6	  38.2	 2.6	* 	HD 46223
+099.10787	+06.08319	      25	HD 46966         	---           	O8.5	IV   	  3	 38	 0	 1	HD46966_20091112_011937_N_V46000     	5147.563	185	OIII {lambda}5592 	279	171	  36	5	  39.5	 1.5	* 	HD 46966
+099.65912	+01.61352	      26	HD 47432         	---           	O9.7	Ib   	  3	  1	 0	 5	HD47432_20091112_032247_N_V46000     	5147.646	160	OIII {lambda}5592 	272	144	  64	4	  60.1	 1.5	* 	HD 47432
+109.67701	-24.95437	      27	HD 57061 AaAb    	tau CMa AaAb  	O9  	II   	  3	  1	 5	 0	HD57061_20110321_015810_F_V48000     	5641.585	268	OIII {lambda}5592 	229	252	  43	4	  43.0	 4.1	* 	HD 57061
+109.87543	-22.00480	      28	HD 57236         	---           	O8.5	V    	  2	  0	 4	 0	HD57236_20121224_043200_N_V25000     	6285.698	109	OIII {lambda}5592 	165	172	  79	5	  19.0	 4.6	* 	HD 57236
+118.40919	-26.23405	      29	HD 64568         	---           	O3  	V    	  0	  0	 3	 0	HD64568_20080607_230926_F_V48000     	4625.471	181	NV {lambda}4603   	162	104	  84	8	  77.0	 3.0	* 	HD 64568
+122.75701	-37.29237	      30	HD 68450         	---           	O9.7	II   	  0	  0	 4	 0	HD68450_20090503_001401_F_V48000     	4954.512	187	OIII {lambda}5592 	126	186	  35	2	  36.0	 4.1	* 	HD 68450
+123.95236	-35.63135	      31	HD 69464         	---           	O7  	Ib   	  0	  0	 8	 0	HD69464_20080608_231326_F_V48000     	4626.470	152	OIII {lambda}5592 	119	271	  57	5	      	    	  	HD 69464
+126.23245	-44.30083	      32	HD 71304         	---           	O9  	II   	  0	  0	 2	 0	HD71304_20090503_002457_F_V48000     	4954.527	163	OIII {lambda}5592 	 93	256	  25	3	  32.0	 0.1	**	HD 71304
+131.75663	-44.07468	      33	HD 75211         	---           	O8.5	II   	  0	  0	 4	 0	HD75211_20120519_235311_F_V48000     	6067.499	184	OIII {lambda}5592 	120	275	  26	5	  20.0	 2.5	* 	HD 75211
+134.37022	-50.74950	      34	HD 76968         	---           	O9.2	Ib   	  0	  0	 5	 0	HD76968_20080513_001447_F_V48000     	4599.514	231	OIII {lambda}5592 	108	195	 -22	3	  -9.0	 6.6	**	HD 76968
+158.30111	-58.17046	      35	HD 91572         	---           	O6.5	V    	  0	  0	 5	 0	HD91572_20080609_010335_F_V48000     	4626.550	193	OIII {lambda}5592 	150	213	  -2	3	      	    	  	HD 91572
+158.69430	-58.15612	      36	HD 91824         	---           	O7  	V    	  0	  0	 9	 0	HD91824_20070419_012940_F_V48000     	4209.572	264	OIII {lambda}5592 	144	198	   6	4	 -15.0	 0.0	**	HD 91824
+160.82477	-60.13424	      37	HD 93027         	---           	O9.5	IV   	  0	  0	 2	 0	HD93027_20090502_015334_F_V48000     	4953.590	180	OIII {lambda}5592 	113	139	  -3	2	      	    	  	HD 93027
+160.81391	-60.20117	      38	HD 93028         	---           	O9  	IV   	  0	  0	 7	 0	HD93028_20080514_015221_F_V48000     	4600.585	168	OIII {lambda}5592 	109	195	 -37	5	 -25.0	 2.5	* 	HD 93028
+160.97665	-59.54930	      39	HD 93128         	---           	O3.5	V    	  0	  0	 3	 0	HD93128_20150403_033259_F_V48000     	7115.656	186	OIII {lambda}5592 	231	 49	   4	5	      	    	  	HD 93128
+160.98952	-59.54762	      40	HD 93129 AaAb    	---           	O2  	Iab/I	  0	  0	12	 0	HD93129A_20150405_023412_F_V48000    	7117.614	225	NV {lambda}4620   	275	457	   8	6	      	    	  	HD 93129
+161.00066	-60.08608	      41	HD 93146 A       	---           	O7  	V    	  0	  0	 8	 0	HD93146_20080514_020823_F_V48000     	4600.597	244	OIII {lambda}5592 	171	220	 -17	2	      	    	  	HD 93146
+161.03024	-59.57517	      42	HD 93160 AB      	---           	O7  	III  	  0	  0	 4	 0	HD93160_20150402_042354_F_V48000     	7114.690	232	OIII {lambda}5592 	291	131	 -21	4	      	    	  	HD 93160
+161.13475	-59.74195	      43	HD 93204         	---           	O5.5	V    	  0	  0	 3	 0	HD93204_20080609_015400_F_V48000     	4626.586	180	OIII {lambda}5592 	148	210	  -4	2	      	    	  	HD 93204
+161.15103	-60.09136	      44	HD 93222 AB      	---           	O7  	V    	  0	  0	 2	 0	HD93222_20110214_050447_F_V48000     	5606.717	191	OIII {lambda}5592 	129	308	  -3	3	      	    	  	HD 93222
+161.18281	-59.35698	      45	HD 93249 A       	---           	O9  	III  	  0	  0	11	 0	HD93249_20090502_003412_F_V48000     	4953.534	192	OIII {lambda}5592 	113	221	  -7	3	      	    	  	HD 93249
+161.18761	-59.56519	      46	HD 93250 AB      	---           	O4  	III  	  0	  0	 4	 0	HD93250_20120521_014809_F_V48000     	6068.580	207	OIII {lambda}5592 	196	 96	   0	1	  -3.0	 4.6	* 	HD 93250
+162.15738	-60.22375	      47	HD 93843         	---           	O5  	III  	  0	  0	 4	 0	HD93843_20150403_055036_F_V48000     	7115.749	246	OIII {lambda}5592 	279	212	 -10	6	      	    	  	HD 93843
+162.50628	-57.87396	      48	HD 94024         	---           	O8  	IV   	  0	  0	 8	 0	HD94024_20080515_011756_F_V48000     	4601.563	183	OIII {lambda}5592 	 87	281	  33	5	      	    	  	HD 94024
+164.14911	-61.70897	      49	HD 94963         	---           	O7  	II   	  0	  0	 1	 0	HD94963_20070421_040533_F_V48000     	4211.679	192	OIII {lambda}5592 	131	332	   0	4	      	    	  	HD 94963
+166.23126	-61.05161	      50	HD 96264         	---           	O9.5	III  	  0	  0	 5	 0	HD96264_20110321_053854_F_V48000     	5641.742	151	OIII {lambda}5592 	114	124	  32	3	 -33.0	 4.6	* 	HD 96264
+166.74909	-59.66788	      51	HD 96622         	---           	O9.2	IV   	  0	  0	 4	 0	HD96622_20080513_011335_F_V48000     	4599.559	159	OIII {lambda}5592 	233	191	  29	3	      	    	  	HD 96622
+166.88674	-59.96353	      52	HD 96715         	---           	O4  	V    	  0	  0	 1	 0	HD96715_20150403_052702_F_V48000     	7115.734	182	NV {lambda}4603   	219	 99	 -27	4	      	    	  	HD 96715
+167.21570	-60.75942	      53	HD 96946         	---           	O6.5	III  	  0	  0	 5	 0	HD96946_20120520_033905_F_V48000     	6067.659	163	OIII {lambda}5592 	125	163	  -7	5	      	    	  	HD 96946
+168.63293	-59.02468	      54	HD 97848         	---           	O8  	V    	  0	  0	 2	 0	HD97848_20090502_041114_F_V48000     	4953.686	210	OIII {lambda}5592 	125	275	  -4	1	  -7.0	 4.6	* 	HD 97848
+174.54130	-63.19684	      55	HD 101190 AaAb   	---           	O6  	IV   	  0	  0	 3	 0	HD101190_20110321_032654_F_V48000    	5641.650	226	OIII {lambda}5592 	181	 93	 -14	6	  -8.0	 5.9	**	HD 101190
+174.59488	-63.20078	      56	HD 101223        	---           	O8  	V    	  0	  0	 5	 0	HD101223_20040508_231307_F_V48000    	3134.549	126	OIII {lambda}5592 	315	238	   3	2	      	    	  	HD 101223
+180.61582	-58.24288	      57	HD 104565        	---           	O9.7	Iab/I	  0	  0	 1	 0	HD104565_20080513_024739_F_V48000    	4599.627	121	OIII {lambda}5592 	 96	270	 -22	6	      	    	  	HD 104565
+181.45784	-69.57305	      58	HD 105056        	GS Mus        	O9.7	Ia   	  0	  0	 6	 0	HD105056_20090502_044058_F_V48000    	4953.702	188	OIII {lambda}5592 	161	147	   5	3	  -9.0	 3.1	* 	HD 105056
+198.43970	-63.58658	      59	HD 114737 AB     	---           	O8.5	III  	  0	  0	 4	 0	HD114737_20150405_051825_F_V48000    	7117.728	173	OIII {lambda}5592 	251	237	-105	5	      	    	  	HD 114737
+211.87768	-64.46911	      60	HD 123008        	---           	O9.2	Iab/I	  0	  0	 2	 0	HD123008_20080514_040321_F_V48000    	4600.679	132	OIII {lambda}5592 	 69	259	 -12	3	 -32.3	 2.9	* 	HD 123008
+215.09493	-60.88951	      61	HD 125241        	---           	O8.5	Ib   	  0	  0	 4	 0	HD125241_20150402_074924_F_V48000    	7114.834	143	OIII {lambda}5592 	 65	335	 -37	6	 -47.0	 2.7	* 	HD 125241
+229.70476	-60.49633	      62	HD 135591        	---           	O8  	IV   	  0	  0	 1	 0	HD135591_20070420_073310_F_V48000    	4210.820	222	OIII {lambda}5592 	127	274	   0	2	  -3.1	 3.5	* 	HD 135591
+248.52092	-44.04531	      63	HD 149038        	mu Nor        	O9.7	Iab/I	  0	  0	 2	 0	HD149038_20090525_045827_F_V48000    	4976.714	251	OIII {lambda}5592 	137	198	   7	4	   6.3	 2.5	* 	HD 149038
+252.45105	-42.00172	      64	HD 151515        	---           	O7  	II   	  0	  0	 1	 0	HD151515_20070419_072807_F_V48000    	4976.934	 65	OIII {lambda}5592 	 59	265	 -22	2	  -9.0	 9.2	**	HD 151515
+252.89051	-41.23054	      65	HD 151804        	---           	O8  	Ia   	  0	  0	 2	 0	HD151804_20150404_050304_F_V48000    	7116.714	220	OIII {lambda}5592 	291	308	 -46	6	 -63.0	 4.0	* 	HD 151804
+253.36924	-42.12140	      66	HD 152147        	---           	O9.7	Ib   	  0	  0	 4	 0	HD152147_20080515_040719_F_V48000    	4601.680	196	OIII {lambda}5592 	104	202	 -13	5	      	    	  	HD 152147
+253.54850	-41.84925	      67	HD 152249        	---           	O9  	Iab/I	  0	  0	 2	 0	HD152249_20090504_092636_F_V48000    	4955.902	189	OIII {lambda}5592 	132	354	 -21	3	      	    	  	HD 152249
+253.73071	-40.52483	      68	HD 152405        	---           	O9.7	II   	  0	  0	 8	 0	HD152405_20120521_055904_F_V48000    	6068.757	168	OIII {lambda}5592 	129	187	   0	3	  -7.0	 6.4	**	HD 152405
+253.76387	-42.09083	      69	HD 152424        	---           	O9.2	Ia   	  0	  0	 5	 0	HD152424_20150405_074548_F_V48000    	7117.827	190	OIII {lambda}5592 	 86	353	 -24	4	 -47.6	 3.1	* 	HD 152424
+254.02173	-40.34933	      70	HD 152590        	---           	O7.5	V    	  0	  0	10	 0	HD152590_20090525_052211_F_V48000    	4976.738	196	OIII {lambda}5592 	114	286	 -45	2	      	    	  	HD 152590
+254.22780	-40.51235	      71	HD 152723 AaAb   	---           	O6.5	III  	  0	  0	13	 0	HD152723_20080515_043624_F_V48000    	4601.699	225	OIII {lambda}5592 	350	184	   2	6	  -5.0	 6.4	**	HD 152723
+256.61820	-35.45104	      72	HD 154368        	---           	O9.2	Iab/I	  0	  0	 2	 0	HD154368_20090504_065633_F_V48000    	4955.799	211	OIII {lambda}5592 	 91	279	  11	3	   3.5	 3.3	* 	HD 154368
+257.05826	-35.00435	      73	HD 154643        	---           	O9.7	III  	  0	  0	 5	 0	HD154643_20080514_081212_F_V48000    	4600.849	163	OIII {lambda}5592 	103	177	  18	5	      	    	  	HD 154643
+257.47120	-47.03144	      74	HD 154811        	---           	O9.7	Ib   	  0	  0	 2	 0	HD154811_20080514_082138_F_V48000    	4600.855	189	SiIII {lambda}4452	250	158	 -23	5	 -24.5	 2.4	* 	HD 154811
+258.96147	-33.73702	      75	HD 155889 AB     	---           	O9.5	IV   	  0	  0	 5	 0	HD155889_20120620_051117_F_V48000    	6098.724	169	OIII {lambda}5592 	118	122	   3	5	   7.8	 1.6	**	HD 155889
+259.36254	-35.53667	      76	HD 156154        	---           	O7.5	Ib   	  0	  0	 4	 0	HD156154_20070420_082005_F_V48000    	4210.856	195	OIII {lambda}5592 	106	300	   2	5	      	    	  	HD 156154
+260.21941	-36.07238	      77	HD 156738 AB     	---           	O6.5	III  	  0	  0	 1	 0	HD156738_20110517_070459_F_V48000    	5698.807	 77	OIII {lambda}5592 	128	162	  -2	1	      	    	  	HD 156738
+261.57222	-10.99300	      78	HD 157857        	---           	O6.5	II   	  2	  0	 3	 3	HD157857_20110911_201644_N_V46000    	5816.349	121	OIII {lambda}5592 	191	226	  57	5	  57.6	 0.9	* 	HD 157857
+268.72518	-24.88710	      79	HD 162978        	63 Oph        	O8  	II   	  2	  1	 4	 0	HD162978_20110828_205502_N_V46000    	5802.376	161	OIII {lambda}5592 	258	219	  -9	6	 -12.1	 2.1	* 	HD 162978
+269.86820	-36.02100	      80	HD 163758        	---           	O6.5	Ia   	  0	  0	 3	 0	HD163758_20120520_102704_F_V48000    	6067.944	214	OIII {lambda}5592 	196	282	 -45	6	      	    	  	HD 163758
+269.73858	-22.51755	      81	HD 163800        	---           	O7.5	III  	  2	  1	 1	 0	HD163800_20110829_203034_N_V46000    	5803.360	125	OIII {lambda}5592 	252	383	   1	3	   4.3	 3.4	* 	HD 163800
+274.20689	-16.51786	      82	HD 167633        	---           	O6.5	V    	  2	  0	 1	 0	HD167633_20110910_222422_N_V25000    	5815.442	153	OIII {lambda}5592 	287	215	 -48	4	 -53.0	 4.3	* 	HD 167633
+274.65176	-13.80068	      83	HD 168076 AB     	---           	O4  	III  	  2	  0	 2	 0	HD168076_20120521_081558_F_V48000    	6068.853	151	NV {lambda}4603   	164	100	  18	1	      	    	  	HD 168076
+274.67028	-12.10649	      84	HD 168112 AB     	---           	O5  	III  	  1	  0	10	 0	HD168112_20060820_011745_F_V48000    	3967.564	173	OIII {lambda}5592 	127	274	  16	6	  -5.0	 4.4	* 	HD 168112
+276.42978	-09.75307	      85	HD 169582        	---           	O6  	Ia   	  0	  0	 1	 0	HD169582_20090525_100844_F_V48000    	4976.934	 71	OIII {lambda}5592 	122	169	   1	1	  -9.0	 4.7	* 	HD 169582
+279.05266	-14.11551	      86	HD 171589        	---           	O7.5	II   	  2	  0	 1	 0	HD171589_20110912_204533_N_V25000    	5817.373	138	OIII {lambda}5592 	232	265	  20	1	      	    	  	HD 171589
+298.09069	+18.67188	      87	HD 188001        	9 Sge         	O7.5	Iab/I	 21	 71	 0	 2	HD188001_20110620_013133_M_V85000    	5732.572	212	OIII {lambda}5592 	219	320	  19	6	  13.6	 2.3	* 	HD 188001
+297.99612	+47.02734	      88	HD 188209        	---           	O9.5	Iab/I	 23	 89	 0	 2	HD188209_20130603_054038_M_V85000    	6446.741	207	OIII {lambda}5592 	201	225	  -1	4	  -8.0	 0.8	* 	HD 188209
+300.25002	+42.00856	      89	HD 189957        	---           	O9.7	III  	  2	  0	 0	 2	HD189957_20100909_213830_N_V46000    	5449.409	122	OIII {lambda}5592 	193	155	  38	5	  39.9	 2.3	* 	HD 189957
+300.87250	+36.02514	      90	HD 190429 A      	---           	O4  	Iab/I	  1	  1	 0	 3	HD190429_20110615_020805_M_V85000    	5727.596	139	NV {lambda}4603   	138	181	 -16	4	 -18.8	 3.2	* 	HD 190429
+301.41584	+35.60777	      91	HD 190864        	---           	O6.5	III  	  2	  0	 0	 2	HD190864_20100908_234450_N_V46000    	5448.497	137	OIII {lambda}5592 	271	276	 -12	5	  -2.5	 0.9	* 	HD 190864
+302.46076	+45.40291	      92	HD 191781        	---           	O9.7	Iab/I	  0	  1	 0	 0	HD191781_20110619_224718_M_V85000    	5732.458	 28	SiIII {lambda}4452	 26	204	  -8	6	 -13.0	 0.0	**	HD 191781
+302.74283	+41.35276	      93	HD 191978        	---           	O8  	V    	  2	  1	 0	 0	HD191978_20110829_022107_N_V25000    	5802.606	128	OIII {lambda}5592 	296	265	 -10	2	 -17.5	 1.4	* 	HD 191978
+302.75711	+42.12678	      94	HD 192001        	---           	O9.5	IV   	  2	  0	 0	 0	HD192001_20110911_232147_N_V25000    	5816.483	134	OIII {lambda}5592 	245	150	 -38	1	 -27.0	 0.0	**	HD 192001
+303.62678	+37.35384	      95	HD 192639        	---           	O7.5	Iab/I	  7	  2	 0	 1	HD192639_20110615_041736_M_V85000    	5727.686	134	OIII {lambda}5592 	168	297	  -7	5	  -7.5	 0.9	* 	HD 192639
+304.71546	+38.27958	      96	HD 193443 AB     	---           	O9  	III  	  1	  1	 0	 9	HD193443_20100623_011844_N_V46000    	5370.561	123	OIII {lambda}5592 	319	247	 -16	5	 -17.0	 8.5	**	HD 193443
+304.78540	+39.27340	      97	HD 193514        	---           	O7  	Ib   	  2	  0	 0	 3	HD193514_20110910_000224_N_V46000    	5814.508	112	OIII {lambda}5592 	265	282	 -20	4	 -20.7	 3.1	* 	HD 193514
+307.64570	+44.31524	      98	HD 195592        	---           	O9.7	Ia   	  0	  1	 0	 0	HD195592_20110618_003043_M_V85000    	5730.528	105	OIII {lambda}5592 	172	178	 -11	2	 -27.8	 0.9	* 	HD 195592
+318.11829	+44.53170	      99	HD 202124        	---           	O9  	Iab/I	  3	  0	 0	 3	HD202124_20101024_221756_N_V46000    	5494.436	129	OIII {lambda}5592 	242	276	 -33	7	 -24.0	 0.9	* 	HD 202124
+326.22200	+62.46057	     100	HD 207198        	---           	O8.5	II   	 15	 38	 0	 2	HD207198_20091111_193521_N_V46000    	5147.321	189	OIII {lambda}5592 	388	327	 -23	4	 -17.6	 1.4	* 	HD 207198
+326.91579	+59.70037	     101	HD 207538        	---           	O9.7	IV   	  1	  1	 0	 5	HD207538_20100716_035701_N_V46000    	5393.669	119	OIII {lambda}5592 	288	 82	 -22	2	 -14.3	 1.6	* 	HD 207538
+331.28662	+62.27981	     102	HD 209975        	19 Cep        	O9  	Ib   	 42	 38	 0	 2	HD209975_20091111_190418_N_V46000    	5147.298	200	OIII {lambda}5592 	289	261	  -6	4	 -12.3	 0.6	* 	HD 209975
+332.91084	+52.42999	     103	HD 210809        	---           	O9  	Iab/I	  3	  1	 0	 3	HD210809_20100908_232632_N_V46000    	5448.484	150	OIII {lambda}5592 	274	277	 -68	1	 -79.0	 0.9	* 	HD 210809
+339.81533	+39.05027	     104	HD 214680        	10 Lac        	O9  	V    	 33	  1	 0	 3	HD214680_20081107_210248_N_V46000    	4778.381	230	OIII {lambda}5592 	415	181	 -11	1	 -10.1	 0.3	* 	HD 214680
+343.92691	+62.30634	     105	HD 216898        	---           	O9  	V    	  3	  0	 0	 0	HD216898_20110911_023348_N_V25000    	5815.614	132	OIII {lambda}5592 	248	177	   1	3	 -21.7	 2.7	* 	HD 216898
+346.30388	+58.24149	     106	HD 218195 A      	---           	O8.5	III  	  3	  0	 0	 0	HD218195_20110911_031217_N_V25000    	5815.643	130	OIII {lambda}5592 	253	245	 -26	2	 -27.0	 4.3	* 	HD 218195
+347.77895	+53.05824	     107	HD 218915        	---           	O9.2	Iab/I	  4	  0	 0	 2	HD218915_20100716_043411_N_V46000    	5393.694	155	OIII {lambda}5592 	247	223	 -80	1	 -75.4	 0.8	* 	HD 218915
+000.98959	+61.10364	     108	HD 225146        	---           	O9.7	Iab/I	  3	  0	 0	 0	HD225146_20121225_213415_N_V25000    	6287.406	106	OIII {lambda}5592 	206	100	 -39	5	      	    	  	HD 225146
+001.01581	+62.22195	     109	HD 225160        	---           	O8  	Iab/I	  3	  0	 0	 0	HD225160_20110114_201920_N_V25000    	5576.357	138	OIII {lambda}5592 	241	250	 -38	5	 -45.4	 0.3	* 	HD 225160
+305.79493	+40.87496	     110	HD 229196        	HDE 229 196   	O6  	II   	  2	  0	 0	 0	HD229196_20110912_003950_N_V25000    	5816.537	113	OIII {lambda}5592 	210	223	 -19	1	 -38.0	 4.6	* 	HD 229196
+080.66706	+33.31928	     111	HD 242926        	HDE 242 926   	O7  	V    	  2	  0	 0	 0	HD242926_20161029_034457_N_V25000    	7690.660	 96	OIII {lambda}5592 	194	191	  18	1	      	    	  	HD 242926
+142.65524	-51.65964	     112	HD 298429        	HDE 298 429   	O8.5	V    	  0	  0	 1	 0	HD298429_20110213_061413_F_V48000    	5605.767	 71	OIII {lambda}5592 	156	267	  25	5	      	    	  	HD 298429
+161.27464	-59.66831	     113	HD 303308 AB     	HDE 303 308   	O4.5	V    	  0	  0	 2	 0	HD303308_20090502_023316_F_V48000    	4953.613	209	OIII {lambda}5592 	168	117	   0	9	      	    	  	HD 303308
+161.15608	-59.54874	     114	HD 303311        	HDE 303 311   	O6  	V    	  0	  0	 1	 0	HD303311_20070419_034639_F_V48000    	4209.671	148	OIII {lambda}5592 	118	229	  -5	3	      	    	  	HD 303311
+162.96979	-58.97646	     115	HD 303492        	HDE 303 492   	O8.5	Ia   	  0	  0	 4	 0	HD303492_20080513_005333_F_V48000    	4599.546	179	OIII {lambda}5592 	 75	256	  35	3	      	    	  	HD 303492
+259.87674	-35.71003	     116	HD 319699        	HDE 319 699   	O5  	V    	  0	  0	 4	 0	HD319699_20070419_093144_F_V48000    	4209.911	132	OIII {lambda}5592 	211	117	 -38	3	      	    	  	HD 319699
+260.21089	-35.86279	     117	HD 319702        	HDE 319 702   	O8  	III  	  0	  0	 5	 0	HD319702_20150402_085257_F_V48000    	7114.882	102	OIII {lambda}5592 	 64	252	   8	3	      	    	  	HD 319702
+254.73079	-40.24260	     118	HD 322417        	HDE 322 417   	O6.5	IV   	  0	  0	 5	 0	HD322417_20080515_031709_F_V48000    	4601.648	114	OIII {lambda}5592 	 84	280	  -6	4	      	    	  	HD 322417
+259.77509	-38.77917	     119	ALS 18 747       	---           	O5.5	Iab/I	  0	  0	 0	 0	---                                  	        	   	---               	   	   	    	 	      	    	  	ALS 18747
+274.51393	-11.29412	     120	BD -11 4586      	---           	O8  	Ib   	  0	  0	 2	 0	BD-114586_20070527_073741_F_V48000   	4247.833	128	OIII {lambda}5592 	 60	365	  21	4	      	    	  	BD -11 4586
+123.82159	-35.73746	     121	CPD -35 2105 AaAb	---           	O9.2	III  	  0	  0	 0	 0	---                                  	        	   	---               	   	   	    	 	      	    	  	CPD -35 2105 A
+253.55510	-41.84237	     122	CPD -41 7733     	---           	O9  	IV   	  0	  0	 5	 0	CPD-417733_20040505_042329_F_V48000  	3130.680	174	OIII {lambda}5592 	265	231	 -92	2	      	    	  	CPD -41 7733
+134.47757	-47.73769	     123	CPD -47 2963 AB  	---           	O5  	Iab/I	  0	  0	 5	 0	CPD-472963_20070419_002543_F_V48000  	4209.529	207	OIII {lambda}5592 	152	233	  24	9	      	    	  	CPD -47 2963
+160.98951	-60.09116	     124	CPD -59 2551     	---           	O9  	V    	  0	  0	 2	 0	CPD-592551_20100507_002325_F_V48000  	5323.523	113	OIII {lambda}5592 	193	181	  -7	6	      	    	  	CPD -59 2551
+161.17415	-59.78233	     125	CPD -59 2600     	---           	O6  	V    	  0	  0	 7	 0	CPD-592600_20150405_030555_F_V48000  	7117.637	203	OIII {lambda}5592 	127	157	 -45	4	      	    	  	CPD -59 2600
+308.53548	+41.61650	     126	CYG OB2-11       	---           	O5.5	Iab/I	  1	  0	 0	 0	CYGOB2-11_20160429_032645_N_V25000_G 	7507.600	 39	OIII {lambda}5592 	119	218	 -25	7	      	    	  	Schulte 11
+308.05759	+41.45333	     127	CYG OB2-4 A      	---           	O7  	III  	  1	  0	 0	 0	CYGOB2-4_20160429_004947_N_V25000_G  	7507.500	 32	OIII {lambda}5592 	 98	361	 -11	7	 -28.0	18.0	**	Schulte 4
+308.30879	+41.33942	     128	CYG OB2-7        	---           	O3  	Iab/I	  1	  0	 0	 0	CYGOB2-7_20160429_014211_N_V25000_G  	7507.600	 31	NV {lambda}4603   	 35	559	 -13	9	      	    	  	Schulte 7
+308.29474	+41.25228	     129	CYG OB2-9        	---           	O4.5	Iab/I	  1	  0	 0	 0	CYGOB2-9_20160429_023433_N_V25000_G  	7507.600	 21	HeI {lambda}5875  	 94	362	 -40	3	      	    	  	Schulte 9
+261.18637	-34.20075	     130	Pismis 24-17     	---           	O3.5	III  	  0	  0	 0	 0	---                                  	        	   	---               	   	   	    	 	      	    	  	Cl Pismis 24 17
+160.98067	-59.54691	     131	Trumpler 14-9    	---           	O8.5	V    	  0	  0	 2	 0	TRUMPLER14-9_20100510_005721_F_V48000	5326.521	121	OIII {lambda}5592 	187	183	  -1	2	      	    	  	Cl Trumpler 14 9
+
+#Table	J_A_A_613_A65_tabled2:
+#Name: J/A+A/613/A65/tabled2
+#Title: Spectroscopic parameters for the complete stars
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Target	(a17)	Name of the star	[ucd=meta.id;meta.main]
+#Column	n_Target	(A1)	[a] Note (1)	[ucd=meta.note]
+#Column	SpType	(A5)	Spectral type	[ucd=src.spType]
+#Column	LumClass	(a11)	Luminosity class	[ucd=src.class.luminosity]
+#Column	vsini	(I3)	? Projected rotational velocity	[ucd=phys.veloc.rotat]
+#Column	vmac	(I3)	? Macroturbulent velocity	[ucd=phys.veloc]
+#Column	l_Teff	(A1)	Limit flag on Teff	[ucd=meta.code.error;phys.temperature.effective]
+#Column	Teff	(F4.1)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	e_Teff	(F4.1)	? rms uncertainty on Teff	[ucd=stat.error;phys.temperature.effective]
+#Column	l_logg	(A1)	Limit flag on logg	[ucd=meta.code.error]
+#Column	logg	(F5.2)	? logarithm of the surface gravity	[ucd=phys.gravity]
+#Column	e_logg	(F5.2)	? rms uncertainty on logg	[ucd=stat.error]
+#Column	l_loggt	(A1)	Limit flag on loggt	[ucd=meta.code.error]
+#Column	loggt	(F5.2)	? Gravity corrected from rotational effects (2)	[ucd=phys.gravity]
+#Column	e_loggt	(F5.2)	? rms uncertainty on loggt	[ucd=stat.error]
+#Column	l_Y(He)	(A1)	Limit flag on Y(He)	[ucd=meta.code.error]
+#Column	Y(He)	(F5.2)	? Helium abundance	[ucd=phys.abund.Y]
+#Column	e_Y(He)	(F5.2)	? rms uncertainty on Y(He)	[ucd=stat.error]
+#Column	l_vmic	(A1)	Limit flag on vmic	[ucd=meta.code.error]
+#Column	vmic	(F4.1)	? Microturbulence velocity or lower value of microturbulence velocity interval	[ucd=phys.veloc.microTurb]
+#Column	e_vmic	(I1)	? rms uncertainty on vmic	[ucd=stat.error]
+#Column	Bvmic	(F4.1)	? Upper value of microturbulence velocity interval	[ucd=phys.veloc.microTurb;stat.max]
+#Column	l_logQ	(A1)	Limit flag on logQ	[ucd=meta.code.error]
+#Column	logQ	(F5.1)	? Wind-strength parameter	[ucd=stat.fit.param]
+#Column	e_logQ	(F4.1)	? rms uncertainty on logQ	[ucd=stat.error]
+#Column	Qual	(A2)	Quality flag (Q1-Q4) (3)	[ucd=meta.code.qual]
+#Column	Notes	(a7)	Multi-epoch notes (4)	[ucd=meta.note]
+#Column	OWNNote	(A4)	OWN multi-epoch notes (4)	[ucd=meta.note]
+recno	Target	n_Target	SpType	LumClass	vsini	vmac	l_Teff	Teff	e_Teff	l_logg	logg	e_logg	l_loggt	loggt	e_loggt	l_Y(He)	Y(He)	e_Y(He)	l_vmic	vmic	e_vmic	Bvmic	l_logQ	logQ	e_logQ	Qual	Notes	OWNNote
+ 	 	 	 	 	km/s	km/s	 	kK	kK	 	[cm/s2]	[cm/s2]	 	[cm/s2]	[cm/s2]	 	[-]	[-]	 	km/s	km/s	km/s	 	 	 	 	 	
+--------	-----------------	-	-----	-----------	---	---	-	----	----	-	-----	-----	-	-----	-----	-	-----	-----	-	----	-	----	-	-----	----	--	-------	----
+       1	HD 190429 A      	 	O4   	I f        	 90	113	 	36.6	 0.8	 	 3.52	 0.10	 	 3.53	 0.09	 	 0.17	 0.04	<	10.0	 	    	 	-12.1	 0.1	Q1	WVe,MD2	
+       2	HD 14947         	 	O4.5 	I f        	114	 22	 	39.1	 1.1	 	 3.64	 0.11	 	 3.65	 0.10	 	 0.15	 0.04	 	 5.0	 	19.9	 	-12.0	 0.1	Q3	LPV,WVe	
+       3	CPD -47 2963 AB  	 	O5   	I fc       	 67	110	 	37.1	 0.5	 	 3.51	 0.05	 	 3.51	 0.04	 	 0.11	 0.03	>	 8.0	 	    	 	-12.3	 0.1	Q3	LPV    	
+       4	CYG OB2-11       	 	O5.5 	I fc       	 75	 85	 	37.3	 1.5	 	 3.63	 0.15	 	 3.63	 0.14	 	 0.11	 0.03	 	 5.0	 	19.9	 	-12.3	 0.1	Q3	C      	
+       5	HD 169582        	 	O6   	Ia f       	 66	 97	 	38.9	 1.3	 	 3.70	 0.22	 	 3.70	 0.21	 	 0.23	 0.07	>	13.0	 	    	 	-12.3	 0.2	Q1	MD1    	VAR
+       6	HD 163758        	 	O6.5 	Ia fp      	 76	 87	 	34.6	 0.6	 	 3.28	 0.08	 	 3.29	 0.07	 	 0.20	 0.03	>	15.0	 	    	 	-12.3	 0.1	Q3	LPV,WVe	VAR
+       7	HD 157857        	 	O6.5 	II (f)     	114	 69	 	36.7	 0.7	 	 3.58	 0.08	 	 3.60	 0.08	 	 0.13	 0.03	>	15.0	 	    	 	-12.4	 0.1	Q1	WVa    	VAR?
+       8	HD 69464         	 	O7   	Ib (f)     	 73	105	 	35.8	 1.0	 	 3.37	 0.09	 	 3.38	 0.08	 	 0.16	 0.03	>	16.0	 	    	 	-12.4	 0.1	Q2	LPV,WVa	SB1
+       9	HD 193514        	 	O7   	Ib (f)     	 73	 84	 	35.9	 0.5	 	 3.58	 0.05	 	 3.58	 0.04	 	 0.10	 0.03	>	18.0	 	    	 	-12.4	 0.1	Q2	WVa    	
+      10	HD 94963         	 	O7   	II (f)     	 76	 92	 	36.3	 0.6	 	 3.54	 0.07	 	 3.54	 0.06	 	 0.10	 0.03	>	16.0	 	    	 	-12.6	 0.2	Q2	MD1    	C
+      11	HD 151515        	 	O7   	II (f)     	 67	 98	 	36.0	 1.0	 	 3.55	 0.14	 	 3.55	 0.13	 	 0.13	 0.04	>	17.0	 	    	 	-12.6	 0.1	Q1	MD1    	C
+      12	HD 188001        	 	O7.5 	Iab f      	 69	100	 	32.4	 0.5	 	 3.19	 0.09	 	 3.20	 0.09	 	 0.17	 0.03	>	14.0	 	    	 	-12.2	 0.1	Q3	SB1,WVe	
+      13	HD 192639        	 	O7.5 	Iab f      	 82	 95	 	34.7	 0.7	 	 3.42	 0.12	 	 3.43	 0.11	 	 0.14	 0.03	>	14.0	 	    	 	-12.4	 0.1	Q2	WVe    	
+      14	HD 156154        	 	O7.5 	Ib (f)     	 62	102	 	34.2	 0.5	 	 3.31	 0.05	 	 3.31	 0.04	 	 0.16	 0.03	>	17.0	 	    	 	-12.5	 0.1	Q2	LPV,WVa	VAR
+      15	HD 17603         	 	O7.5 	Ib (f)     	103	108	 	33.3	 0.8	 	 3.24	 0.09	 	 3.26	 0.08	 	 0.15	 0.03	>	18.0	 	    	 	-12.4	 0.1	Q2	SB1    	
+      16	HD 171589        	 	O7.5 	II (f)     	100	 86	 	36.5	 0.8	 	 3.65	 0.07	 	 3.66	 0.06	 	 0.15	 0.03	>	15.0	 	    	 	-12.6	 0.1	Q1	LPV,WVa	
+      17	HD 34656         	 	O7.5 	II (f)     	 67	 77	 	36.0	 0.5	 	 3.50	 0.05	 	 3.50	 0.04	 	 0.16	 0.03	>	18.0	 	    	 	-12.6	 0.1	Q3	LPV,WVa	
+      18	HD 151804        	 	O8   	Ia f       	 72	 73	<	28.2	    	 	 2.83	 0.05	 	 2.86	 0.05	 	 0.14	 0.03	>	17.0	 	    	 	-11.9	 0.1	Q3	WVa    	VAR
+      19	HD 225160        	 	O8   	Iab f      	 77	103	 	33.2	 1.2	 	 3.34	 0.15	 	 3.35	 0.14	 	 0.13	 0.03	>	10.0	 	    	 	-12.2	 0.1	Q2	WVe    	
+      20	BD -11 4586      	 	O8   	Ib (f)     	 74	 68	 	32.4	 0.6	 	 3.21	 0.11	 	 3.22	 0.10	 	 0.17	 0.04	>	16.0	 	    	 	-12.4	 0.1	Q2	LPV,WVe	C
+      21	HD 162978        	 	O8   	II ((f))   	 54	 86	 	35.0	 0.5	 	 3.50	 0.05	 	 3.50	 0.04	 	 0.10	 0.03	>	16.0	 	    	 	-12.7	 0.1	Q3	WVa    	VAR
+      22	HD 303492        	 	O8.5 	Ia f       	 87	 55	 	28.3	 1.0	 	 2.86	 0.07	 	 2.91	 0.06	 	 0.10	 0.03	>	16.0	 	    	 	-11.9	 0.1	Q3	LPV,WVe	VAR?
+      23	HD 125241        	 	O8.5 	Ib (f)     	118	 95	 	32.1	 0.5	 	 3.21	 0.05	 	 3.24	 0.04	 	 0.15	 0.03	 	15.0	4	    	 	-12.1	 0.1	Q2	LPV,WVe	VAR?
+      24	HD 75211         	 	O8.5 	II ((f))   	145	 53	 	33.4	 0.6	 	 3.35	 0.07	 	 3.40	 0.06	 	 0.11	 0.03	>	15.0	 	    	 	-12.5	 0.1	Q2	SB1,WVa	SB1
+      25	HD 207198        	 	O8.5 	II ((f))   	 52	 97	 	33.1	 0.5	 	 3.31	 0.05	 	 3.31	 0.04	 	 0.15	 0.03	>	13.0	 	    	 	-12.7	 0.1	Q1	LPV,WVa	
+      26	HD 30614         	 	O9   	Ia         	113	 77	 	29.4	 0.6	 	 2.94	 0.08	 	 3.00	 0.07	 	 0.12	 0.05	>	18.0	 	    	 	-12.3	 0.1	Q2	SB1,WVe	
+      27	HD 152249        	 	OC9  	Iab        	 71	 70	 	31.1	 0.5	 	 3.20	 0.05	 	 3.21	 0.04	 	 0.10	 0.03	>	11.0	 	    	 	-12.5	 0.1	Q2	WVe,MD2	VAR?
+      28	HD 202124        	 	O9   	Iab        	 88	114	 	31.1	 0.5	 	 3.20	 0.06	 	 3.22	 0.06	 	 0.11	 0.03	>	18.0	 	    	 	-12.4	 0.1	Q3	WVe    	
+      29	HD 210809        	 	O9   	Iab        	 70	105	 	30.9	 0.5	 	 3.11	 0.06	 	 3.12	 0.05	 	 0.12	 0.03	>	18.0	 	    	 	-12.4	 0.1	Q2	LPV,WVe	
+      30	HD 209975        	 	O9   	Ib         	 50	104	 	32.0	 0.5	 	 3.30	 0.05	 	 3.30	 0.04	 	 0.10	 0.03	 	15.0	3	    	 	-12.7	 0.1	Q3	LPV,WVa	
+      31	HD 71304         	 	O9   	II         	 52	100	 	32.0	 0.5	 	 3.30	 0.05	 	 3.30	 0.04	 	 0.11	 0.03	>	17.0	 	    	 	-12.7	 0.1	Q1	C,MD2  	C
+      32	HD 152424        	 	OC9.2	Ia         	 59	 66	 	30.2	 0.5	 	 3.16	 0.07	 	 3.17	 0.06	<	 0.07	     	>	17.0	 	    	 	-12.3	 0.1	Q2	SB1    	
+      33	HD 218915        	 	O9.2 	Iab        	 63	 88	 	31.1	 0.5	 	 3.21	 0.05	 	 3.22	 0.04	 	 0.10	 0.03	>	19.0	 	    	 	-12.6	 0.1	Q3	WVe    	
+      34	HD 154368        	 	O9.2 	Iab        	 65	 78	 	30.4	 0.5	 	 3.03	 0.05	 	 3.04	 0.04	 	 0.14	 0.03	>	16.0	 	    	 	-12.4	 0.1	Q3	WVe,MD2	C
+      35	HD 123008        	 	ON9.2	Iab        	 62	 94	 	31.7	 0.5	 	 3.21	 0.06	 	 3.22	 0.05	 	 0.19	 0.03	>	18.0	 	    	 	-12.2	 0.1	Q3	WVe,MD2	C
+      36	HD 76968         	 	O9.2 	Ib         	 53	 65	 	30.8	 0.5	 	 3.28	 0.05	 	 3.28	 0.04	 	 0.10	 0.03	 	12.0	6	    	 	-12.5	 0.1	Q3	SB1,WVe	SB1
+      37	HD 188209        	 	O9.5 	Iab        	 54	 93	 	30.1	 0.5	 	 3.03	 0.10	 	 3.04	 0.09	 	 0.14	 0.03	>	19.0	 	    	 	-12.5	 0.1	Q3	LPV,WVe	
+      38	HD 36486 AaAb    	 	O9.5 	II Nwk     	100	 94	 	30.1	 0.5	 	 3.31	 0.05	 	 3.33	 0.04	 	 0.10	 0.03	<	 7.0	 	    	 	-12.9	 0.2	Q1	SB1    	VAR?
+      39	HD 105056        	 	ON9.7	Ia e       	 56	 46	 	27.4	 0.6	 	 2.86	 0.08	 	 2.88	 0.08	 	 0.11	 0.03	>	18.0	 	    	 	-12.0	 0.1	Q3	LPV,WVe	
+      40	HD 195592        	 	O9.7 	Ia         	 38	100	 	28.0	 0.5	 	 2.91	 0.05	 	 2.91	 0.04	 	 0.12	 0.03	>	16.0	 	    	 	-12.1	 0.1	Q2	MD1    	
+      41	HD 149038        	 	O9.7 	Iab        	 52	 90	 	29.8	 0.5	 	 3.18	 0.05	 	 3.18	 0.04	<	 0.11	     	>	10.0	 	    	 	-12.6	 0.1	Q3	WVe,MD2	C
+      42	HD 225146        	 	O9.7 	Iab        	 67	 88	 	28.3	 0.6	 	 3.10	 0.10	 	 3.11	 0.09	>	 0.10	     	 	14.0	4	    	 	-12.6	 0.1	Q1	LPV,WVe	
+      43	HD 104565        	 	OC9.7	Iab        	 56	116	 	28.9	 0.5	 	 3.00	 0.05	 	 3.01	 0.04	 	 0.10	 0.03	>	14.0	 	    	 	-12.2	 0.1	Q3	MD1    	VAR?
+      44	HD 191781        	 	ON9.7	Iab        	105	 48	 	28.7	 2.0	<	 3.37	     	<	 3.39	     	<	 0.16	     	>	 9.0	 	    	 	-12.4	 0.2	Q1	MD1    	
+      45	HD 154811        	 	OC9.7	Ib         	124	 62	 	29.8	 0.5	 	 3.18	 0.05	 	 3.22	 0.04	 	 0.09	 0.03	 	14.0	5	    	 	-12.7	 0.1	Q3	LPV,WVe	C
+      46	HD 152147        	 	O9.7 	Ib Nwk     	 91	 64	 	30.1	 0.5	 	 3.24	 0.10	 	 3.26	 0.09	<	 0.08	     	 	14.0	6	    	 	-12.6	 0.1	Q3	SB1    	
+      47	HD 47432         	 	O9.7 	Ib         	 97	 63	 	29.1	 0.5	 	 3.01	 0.05	 	 3.04	 0.04	 	 0.10	 0.03	>	19.0	 	    	 	-12.5	 0.1	Q3	LPV,WVe	
+      48	HD 68450         	 	O9.7 	II         	 39	 77	 	30.6	 0.9	 	 3.31	 0.14	 	 3.31	 0.13	<	 0.12	     	>	12.0	 	    	 	-13.0	 0.2	Q1	C      	C
+      49	HD 10125         	 	O9.7 	II         	122	125	 	30.9	 0.5	 	 3.38	 0.06	 	 3.41	 0.05	 	 0.11	 0.03	>	16.0	 	    	 	-12.7	 0.1	Q3	SB1    	
+      50	HD 152405        	 	O9.7 	II         	 59	 61	 	30.3	 0.5	 	 3.28	 0.10	 	 3.29	 0.09	 	 0.10	 0.03	 	 8.0	3	    	 	-12.9	 0.2	Q1	SB1    	
+      51	HD 93250 AB      	a	O4   	III (fc)   	 70	 84	 	45.0	 0.6	 	 3.86	 0.06	 	 3.86	 0.05	 	 0.11	 0.03	>	13.0	 	    	 	-12.5	 0.2	Q1	WVa    	C
+      52	HD 168076 AB     	a	O4   	III (f)    	 68	101	 	43.0	 1.8	 	 3.92	 0.16	 	 3.92	 0.15	<	 0.09	     	 	 5.0	 	19.9	 	-12.5	 0.2	Q3	LPV    	C
+      53	HD 93843         	 	O5   	III (fc)   	 58	120	 	37.3	 0.6	 	 3.53	 0.06	 	 3.53	 0.05	 	 0.12	 0.03	>	16.0	 	    	 	-12.5	 0.1	Q2	WVa    	C
+      54	HD 168112 AB     	a	O5   	III (f)    	107	 78	 	39.7	 1.0	 	 3.70	 0.14	 	 3.71	 0.13	 	 0.11	 0.03	>	13.0	 	    	 	-12.5	 0.2	Q1	SB1    	
+      55	HD 152723 AaAb   	 	O6.5 	III (f)    	 73	100	 	38.0	 0.5	 	 3.81	 0.05	 	 3.81	 0.04	<	 0.07	     	>	16.0	 	    	 	-12.7	 0.1	Q3	SB1,WVa	
+      56	HD 96946         	 	O6.5 	III (f)    	 72	 58	 	39.0	 0.5	 	 3.86	 0.08	 	 3.86	 0.07	 	 0.11	 0.03	<	16.0	 	    	 	-12.8	 0.3	Q3	LPV    	
+      57	HD 156738 AB     	 	O6.5 	III (f)    	 65	103	 	37.9	 1.1	 	 3.83	 0.16	 	 3.83	 0.15	<	 0.08	     	>	 7.0	 	    	 	-12.8	 0.2	Q3	MD1    	C
+      58	HD 190864        	 	O6.5 	III (f)    	 66	 90	 	37.5	 0.9	 	 3.64	 0.09	 	 3.64	 0.08	 	 0.12	 0.03	>	13.0	 	    	 	-12.7	 0.1	Q1	C      	
+      59	HD 93160 AB      	 	O7   	III ((f))  	120	 64	 	36.6	 0.7	 	 3.84	 0.10	 	 3.85	 0.09	<	 0.07	     	<	18.0	 	    	 	-12.6	 0.1	Q3	LPV,WVa	VAR
+      60	CYG OB2-4 A      	 	O7   	III ((f))  	 72	105	 	36.4	 1.7	 	 3.52	 0.16	 	 3.53	 0.15	 	 0.14	 0.06	>	16.0	 	    	 	-12.8	 0.3	Q1	C      	
+      61	HD 163800        	 	O7.5 	III ((f))  	 53	107	 	35.2	 0.5	 	 3.42	 0.05	 	 3.42	 0.04	 	 0.10	 0.03	>	18.0	 	    	 	-12.9	 0.2	Q1	LPV    	VAR?
+      62	HD 36861 A       	 	O8   	III ((f))  	 52	 77	 	35.2	 0.5	 	 3.52	 0.05	 	 3.52	 0.04	 	 0.10	 0.03	>	11.0	 	    	 	-13.0	 0.2	Q1	C      	
+      63	HD 114737 AB     	 	O8.5 	III        	 58	 83	 	35.7	 0.5	 	 3.88	 0.05	 	 3.88	 0.04	<	 0.07	     	>	16.0	 	    	 	-12.9	 0.2	Q3	SB1    	
+      64	HD 218195 A      	 	O8.5 	III Nstr   	 44	 78	 	34.1	 0.5	 	 3.53	 0.10	 	 3.53	 0.09	 	 0.11	 0.03	>	18.0	 	    	 	-13.0	 0.2	Q1	LPV    	
+      65	HD 24431         	 	O9   	III        	 49	 81	 	34.9	 0.5	 	 3.77	 0.06	 	 3.77	 0.05	<	 0.07	     	>	18.0	 	    	 	-12.9	 0.2	Q3	C      	
+      66	HD 193443 AB     	 	O9   	III        	 66	140	 	33.0	 0.5	 	 3.50	 0.05	 	 3.51	 0.04	<	 0.07	     	>	17.0	 	    	 	-13.0	 0.2	Q1	LPV    	
+      67	HD 16832         	 	O9.2 	III        	 45	 70	 	32.0	 0.5	 	 3.37	 0.06	 	 3.37	 0.05	 	 0.10	 0.03	 	15.0	3	    	 	-12.9	 0.2	Q1	C,MD2  	
+      68	HD 154643        	 	O9.7 	III        	101	 78	 	31.0	 0.5	 	 3.49	 0.05	 	 3.51	 0.04	 	 0.10	 0.03	 	 9.0	3	    	 	-13.2	 0.2	Q1	SB1    	
+      69	HD 189957        	 	O9.7 	III        	 88	 54	 	32.1	 0.5	 	 3.57	 0.07	 	 3.58	 0.06	<	 0.07	     	 	15.0	3	    	 	-13.0	 0.2	Q1	C      	
+      70	HD 46223         	 	O4   	V ((f))    	 51	112	 	42.2	 0.5	 	 3.73	 0.05	 	 3.73	 0.04	 	 0.10	 0.03	>	 9.0	 	    	 	-12.7	 0.2	Q1	LPV    	VAR
+      71	HD 96715         	 	O4   	V ((f))z   	 59	 86	 	45.2	 1.2	 	 3.91	 0.13	 	 3.91	 0.12	 	 0.13	 0.04	>	 9.0	 	    	 	-12.8	 0.3	Q1	MD1    	C
+      72	HD 15629         	 	O4.5 	V ((fc))   	 76	 64	 	41.8	 0.5	 	 3.79	 0.06	 	 3.79	 0.05	 	 0.10	 0.03	>	16.0	 	    	 	-12.7	 0.1	Q1	LPV    	
+      73	HD 303308 AB     	 	O4.5 	V ((fc))   	 85	 67	 	41.1	 0.9	 	 3.90	 0.09	 	 3.90	 0.08	<	 0.07	     	<	17.0	 	    	 	-12.7	 0.2	Q1	LPV,MD2	C
+      74	HD 319699        	 	O5   	V ((fc))   	 69	 76	 	41.2	 0.8	 	 3.91	 0.08	 	 3.91	 0.07	 	 0.10	 0.03	<	16.0	 	    	 	-12.7	 0.2	Q1	SB1    	
+      75	HD 46150         	 	O5   	V ((f))z   	 60	112	 	41.1	 0.5	 	 3.81	 0.05	 	 3.81	 0.04	 	 0.10	 0.03	<	12.0	 	    	 	-13.1	 0.2	Q1	LPV    	VAR
+      76	HD 93204         	 	O5.5 	V ((f))    	110	 93	 	39.2	 0.7	 	 3.73	 0.06	 	 3.75	 0.06	 	 0.10	 0.03	 	12.0	6	    	 	-12.7	 0.2	Q1	C      	C
+      77	HD 101190 AaAb   	 	O6   	IV ((f))   	 49	 74	 	39.8	 0.5	 	 3.88	 0.05	 	 3.88	 0.04	 	 0.10	 0.03	<	15.0	 	    	 	-12.9	 0.2	Q1	SB1    	SB1
+      78	HD 303311        	 	O6   	V ((f))z   	 47	 61	 	40.1	 0.7	 	 3.91	 0.07	 	 3.91	 0.06	 	 0.11	 0.03	>	 8.0	 	    	 	-13.0	 0.2	Q1	MD1    	C
+      79	CPD -59 2600     	 	O6   	V ((f))    	127	106	 	39.3	 0.8	 	 3.84	 0.09	 	 3.86	 0.08	<	 0.07	     	<	18.0	 	    	 	-12.8	 0.2	Q1	SB1    	SB1
+      80	HD 42088         	 	O6   	V ((f))z   	 49	 76	 	40.0	 0.5	 	 3.99	 0.05	 	 3.99	 0.04	 	 0.10	 0.03	 	12.0	4	    	<	-13.2	    	Q1	C      	
+      81	HD 322417        	 	O6.5 	IV ((f))   	 68	100	 	38.6	 0.8	 	 3.74	 0.11	 	 3.74	 0.10	 	 0.10	 0.03	>	 5.0	 	    	 	-12.7	 0.2	Q1	LPV    	
+      82	HD 91572         	 	O6.5 	V ((f))z   	 60	 57	 	38.8	 0.5	 	 3.84	 0.09	 	 3.84	 0.08	 	 0.09	 0.03	<	16.0	 	    	 	-12.9	 0.2	Q1	LPV    	VAR
+      83	HD 167633        	 	O6.5 	V ((f))    	129	106	 	38.0	 0.8	 	 3.69	 0.08	 	 3.72	 0.07	 	 0.16	 0.03	<	15.0	 	    	 	-12.9	 0.2	Q1	SB1    	VAR
+      84	HD 12993         	 	O6.5 	V ((f))Nstr	 84	 79	 	39.2	 0.6	 	 3.89	 0.08	 	 3.89	 0.07	 	 0.16	 0.03	 	14.0	5	    	 	-13.2	 0.3	Q1	C      	
+      85	HD 93222 AB      	 	O7   	V ((f))    	 50	 90	 	36.8	 0.7	 	 3.63	 0.12	 	 3.63	 0.11	 	 0.11	 0.03	>	12.0	 	    	 	-12.9	 0.2	Q1	WVa,MD2	C
+      86	HD 91824         	 	O7   	V ((f))z   	 51	 48	 	39.8	 0.9	 	 4.02	 0.14	 	 4.02	 0.13	 	 0.10	 0.03	 	 5.0	 	19.9	 	-12.9	 0.2	Q1	SB1    	SB1
+      87	HD 93146 A       	 	O7   	V ((f))    	 60	 67	 	38.7	 0.6	 	 3.84	 0.08	 	 3.84	 0.07	 	 0.09	 0.03	<	14.0	 	    	 	-12.9	 0.2	Q1	SB1    	SB1
+      88	HD 242926        	 	O7   	V z        	 89	 52	 	39.0	 0.7	 	 4.07	 0.12	 	 4.07	 0.11	 	 0.09	 0.03	<	 8.0	 	    	 	-13.4	 0.4	Q1	MD2,LPV	
+      89	HD 152590        	 	O7.5 	V z        	 48	 56	 	38.0	 0.5	 	 3.92	 0.08	 	 3.92	 0.07	 	 0.10	 0.03	 	12.0	6	    	 	-13.4	 0.4	Q1	SB1    	
+      90	HD 35619         	 	O7.5 	V ((f))    	 40	 60	 	37.7	 0.6	 	 3.94	 0.13	 	 3.94	 0.12	<	 0.07	     	 	15.0	3	    	 	-13.0	 0.2	Q1	LPV    	
+      91	HD 135591        	 	O8   	IV ((f))   	 60	 60	 	35.0	 0.5	 	 3.58	 0.05	 	 3.58	 0.04	 	 0.10	 0.03	<	 8.0	 	    	 	-13.0	 0.2	Q1	MD1    	C
+      92	HD 94024         	 	O8   	IV         	162	 52	 	34.8	 0.5	 	 3.49	 0.06	 	 3.56	 0.05	 	 0.11	 0.03	>	18.0	 	    	 	-12.8	 0.2	Q1	SB1    	SB1
+      93	HD 97848         	 	O8   	V          	 41	 77	 	35.6	 0.6	 	 3.67	 0.07	 	 3.67	 0.06	 	 0.10	 0.03	<	15.0	 	    	 	-13.3	 0.4	Q1	LPV,MD2	C
+      94	HD 101223        	 	O8   	V          	 55	 63	 	35.2	 0.5	 	 3.62	 0.05	 	 3.62	 0.05	 	 0.09	 0.03	<	12.0	 	    	 	-13.0	 0.2	Q1	C      	C
+      95	HD 191978        	 	O8   	V          	 57	 82	 	35.8	 0.6	 	 3.81	 0.09	 	 3.81	 0.08	 	 0.10	 0.03	 	11.0	5	    	<	-13.0	    	Q1	C      	
+      96	HD 46966         	 	O8.5 	IV         	 40	 66	 	35.9	 0.5	 	 3.84	 0.08	 	 3.84	 0.07	 	 0.10	 0.03	 	10.0	3	    	 	-13.0	 0.2	Q1	C      	
+      97	HD 298429        	 	O8.5 	V          	105	 80	 	33.6	 1.1	 	 3.51	 0.15	 	 3.55	 0.14	 	 0.13	 0.05	>	 8.0	 	    	 	-13.3	 0.4	Q1	MD1    	C
+      98	HD 46149         	 	O8.5 	V          	 30	 49	 	36.9	 0.5	 	 4.23	 0.09	 	 4.23	 0.08	 	 0.09	 0.03	<	 8.0	 	    	<	-13.0	    	Q1	LPV    	
+      99	Trumpler 14-9    	 	O8.5 	V          	 66	 41	 	36.7	 0.7	 	 4.10	 0.11	 	 4.10	 0.11	 	 0.11	 0.03	<	14.0	 	    	 	-13.0	 0.3	Q1	C,MD2  	
+     100	HD 14633 AaAb    	 	ON8.5	V          	121	 69	 	35.0	 0.5	 	 3.76	 0.09	 	 3.79	 0.08	 	 0.15	 0.03	 	10.0	3	    	 	-13.4	 0.4	Q1	SB1    	
+     101	HD 93028         	 	O9   	IV         	 25	 55	 	35.3	 0.7	 	 3.93	 0.09	 	 3.93	 0.08	<	 0.12	     	<	15.0	 	    	 	-13.3	 0.4	Q1	SB1    	SB1
+     102	CPD -59 2551     	 	O9   	V          	124	 92	 	34.9	 0.5	 	 3.89	 0.05	 	 3.91	 0.05	 	 0.10	 0.03	 	16.0	3	    	<	-13.3	    	Q1	C,MD2  	
+     103	HD 214680        	 	O9   	V          	 14	 43	 	35.2	 0.5	 	 3.89	 0.05	 	 3.89	 0.04	 	 0.10	 0.03	<	12.0	 	    	<	-13.5	    	Q1	C      	
+     104	HD 216898        	 	O9   	V          	 44	 57	 	35.9	 0.6	 	 4.18	 0.12	 	 4.18	 0.11	 	 0.10	 0.03	<	10.0	 	    	<	-13.0	    	Q1	SB1    	
+     105	HD 96622         	 	O9.2 	IV         	 39	 61	 	33.3	 0.6	 	 3.68	 0.12	 	 3.68	 0.11	 	 0.10	 0.03	<	 8.0	 	    	 	-13.3	 0.3	Q1	SB1    	SB1
+     106	HD 46202         	 	O9.2 	V          	 11	 38	 	34.9	 0.5	 	 4.13	 0.08	 	 4.13	 0.07	 	 0.10	 0.03	<	 7.0	 	    	<	-13.1	    	Q1	C      	
+     107	HD 12323         	 	ON9.2	V          	121	 82	 	34.2	 0.9	 	 3.93	 0.20	 	 3.95	 0.18	 	 0.19	 0.05	<	16.0	 	    	<	-13.3	    	Q1	SB1,MD2	
+     108	HD 93027         	 	O9.5 	IV         	 46	 66	 	33.8	 0.5	 	 3.95	 0.08	 	 3.95	 0.07	 	 0.10	 0.03	<	 9.0	 	    	 	-13.4	 0.4	Q1	C,MD2  	C
+     109	HD 192001        	 	O9.5 	IV         	 44	 57	 	33.0	 0.5	 	 3.83	 0.06	 	 3.83	 0.05	 	 0.10	 0.03	<	 7.0	 	    	<	-13.1	    	Q1	LPV    	
+     110	HD 155889 AB     	 	O9.5 	IV         	 27	 51	 	34.9	 0.7	 	 4.10	 0.08	 	 4.10	 0.07	<	 0.09	     	<	12.0	 	    	 	-13.3	 0.3	Q1	LPV    	VAR?
+     111	HD 38666         	 	O9.5 	V          	111	 56	 	33.9	 0.5	 	 3.90	 0.05	 	 3.92	 0.04	 	 0.11	 0.03	<	12.0	 	    	<	-13.0	    	Q1	C,MD2  	C
+     112	HD 34078         	 	O9.5 	V          	 13	 32	 	34.5	 0.8	 	 4.07	 0.15	 	 4.07	 0.14	 	 0.12	 0.03	<	16.0	 	    	<	-13.0	    	Q1	C      	
+     113	HD 207538        	 	O9.7 	IV         	 29	 50	 	32.0	 0.5	 	 3.80	 0.05	 	 3.80	 0.04	 	 0.10	 0.03	 	10.0	3	    	<	-13.6	    	Q1	C      	
+     114	HD 36512         	 	O9.7 	V          	 13	 33	 	33.0	 0.5	 	 4.02	 0.10	 	 4.02	 0.09	 	 0.10	 0.03	<	 7.0	 	    	<	-13.4	    	Q1	C      	
+     115	HD 93129 AaAb    	 	O2   	I f*       	116	142	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	Q4	SB1    	VAR
+     116	CYG OB2-7        	 	O3   	I f*       	 75	126	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	Q4	C      	
+     117	HD 15570         	 	O4   	I f        	 81	115	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	Q4	C      	
+     118	HD 16691         	 	O4   	I f        	158	 88	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	Q4	LPV    	
+     119	CYG OB2-9        	 	O4.5 	I f        	112	 82	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	Q4	C      	
+     120	ALS 18 747       	 	O5.5 	I fc       	   	   	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	--	MD0    	
+     121	HD 229196        	 	O6   	II (f)     	248	 25	 	36.8	 1.0	 	 3.50	 0.11	 	 3.60	 0.08	 	 0.10	 0.03	<	 8.0	 	    	 	-12.4	 0.1	Q1	SB2    	
+     122	HD 57061 AaAb    	 	O9   	II         	 57	 85	 	33.0	 0.5	 	 3.50	 0.05	 	 3.50	 0.04	<	 0.07	     	 	13.0	6	    	 	-12.7	 0.1	Q1	SB2,WVe	
+     123	Pismis 24-17     	 	O3.5 	III (f*)   	   	   	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	--	MD0    	
+     124	HD 319702        	 	O8   	III        	 66	 50	 	36.3	 0.7	 	 3.96	 0.15	 	 3.96	 0.14	<	 0.08	     	<	13.0	 	    	 	-12.9	 0.2	Q1	SB2    	
+     125	HD 93249 A       	 	O9   	III        	 55	 72	 	32.8	 0.5	 	 3.50	 0.09	 	 3.50	 0.08	 	 0.10	 0.03	<	10.0	 	    	 	-13.1	 0.2	Q1	SB2    	SB2
+     126	CPD -35 2105 AaAb	 	O9.2 	III        	   	   	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	--	MD0    	
+     127	HD 96264         	 	O9.5 	III        	 29	 65	 	33.1	 1.0	 	 3.67	 0.16	 	 3.67	 0.15	<	 0.07	     	<	 7.0	 	    	 	-13.0	 0.2	Q1	SB2    	SB2
+     128	HD 64568         	 	O3   	V ((f*))z  	 75	 53	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	Q4	C      	C
+     129	HD 93128         	 	O3.5 	V ((fc))z  	 58	 56	 	    	    	 	     	     	 	     	     	 	     	     	 	    	 	    	 	     	    	Q4	C,MD2  	C
+     130	HD 57236         	 	O8.5 	V          	 29	 62	 	37.3	 1.0	>	 3.94	     	>	 3.94	     	<	 0.09	     	<	14.0	 	    	<	-12.9	    	Q1	SB2    	VAR
+     131	CPD -41 7733     	 	O9   	IV         	 56	 71	 	34.2	 0.5	 	 3.65	 0.07	 	 3.66	 0.07	<	 0.07	     	 	15.0	3	    	 	-13.0	 0.2	Q1	SB2    	
+

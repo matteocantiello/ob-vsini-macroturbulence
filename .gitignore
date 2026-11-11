@@ -1,0 +1,5 @@
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+MIST_v1.2_*/
+*.txz
