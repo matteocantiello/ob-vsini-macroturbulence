@@ -423,8 +423,8 @@ for snr in [100, 30, 15]:
 """)
 
 md(r"""
-No: the medians stay at the noiseless values of Section 6 (60, 77, 114 and 158 km/s for $\zeta = 60$) and only the
-scatter grows as S/N drops. Nothing clusters at 130 km/s. A pile-up there must come from the pipeline itself (for example a lower bound of its model grid or a
+No: down to S/N = 30 the medians stay at the noiseless values of Section 6 (60, 77, 114 and 158 km/s for
+$\zeta = 60$) and only the scatter grows; at S/N = 15 they move by less than 10 km/s, in both directions. Nothing clusters at 130 km/s. A pile-up there must come from the pipeline itself (for example a lower bound of its model grid or a
 prior), and has to be taken from an empirical validation.
 
 """)
@@ -553,8 +553,9 @@ md(r"""
 * Variances add exactly, so the extra width from macroturbulence adds **in quadrature**, not linearly. For
   $A_R = A_T$ the macroturbulent variance is $\zeta^2/4$ at every point on the disk.
 * A least-squares rotation-only fit returns $v\sin i_\mathrm{fit} \simeq \sqrt{(v\sin i)^2 + k^2\zeta^2}$, with
-  $k \approx 0.75$ at R = 22 500 and $k \approx 0.82$ (above 100 km/s) to 0.88 (whole grid) at R = 2000. The
-  moment value $k_\sigma = 1.05$ is an upper bound.
+  $k \approx 0.75$ at R = 22 500 and $k \approx 0.82$ (above 100 km/s) to 0.88 (whole grid) at R = 2000. All
+  fitted values lie below the moment value $k_\sigma = 1.05$ (a numerical result for $A_R = A_T$, not a theorem;
+  for purely radial motions the moment value is 1.11 and the fit gives 1.06).
 * Above ~150 km/s the bias is ≲ 10–15 km/s even for $\zeta = 80$–100 km/s; below ~100 km/s the fitted value is set
   largely by $\zeta$.
 * These values assume equal radial and tangential fractions. Relative to the IACOB ζ, $k$ at R = 2000 ranges from

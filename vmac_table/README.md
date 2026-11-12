@@ -5,35 +5,48 @@ Files in this folder:
 | File | Contents |
 |---|---|
 | `iacob_vmac_mist.csv` | 890 Galactic OB stars with a measured macroturbulent velocity, their published parameters, and the luminosity, mass and evolutionary stage from MIST tracks |
-| `vmac_fit_grid.csv` | Fit of log v_mac as a function of (log T_eff, log L): mean relation, its uncertainty, the intrinsic star-to-star scatter, and the data support |
-| `fig_vmac_table.pdf/.png` | (a) the stars, (b) the mean relation, (c) the intrinsic scatter, with MIST tracks of 8–60 M☉ |
+| `vmac_fit_grid.csv` | Fit of log v_mac as a function of (log T_eff, log L): mean relation, its uncertainty, the observed star-to-star scatter, and the data support |
+| `fig_vmac_table.pdf/.png` | (a) the stars, (b) the mean relation, (c) the observed scatter, with MIST tracks of 8–60 M☉ |
 | `build_vmac_table.py` | Builds everything above (~20 s); needs the MIST tracks, see Section 6 |
-| `input/` | The merged catalogue and the VizieR source tables (positions, upper-limit flags) |
+| `input/` | The merged catalogue (`macroturbulence_evol.csv`) and the VizieR source tables (positions, limit flags, replacement values); `macroturbulence_catalog.csv` is the same merge before the log g cut, kept for reference |
 
 ![v_mac on the HRD](fig_vmac_table.png)
 
 ## 1. The stars
 
-All values come from published tables (VizieR), merged with one priority order. The IACOB-family sources agree with each
-other to a median of ≤ 1 km/s per star where they overlap (pairwise MAD 3–8 km/s), so each star keeps one value from
-the highest-priority source.
+All values come from published tables (VizieR), merged with one priority order (Simón-Díaz 2017, de Burgos 2024,
+Holgado 2018, Holgado 2022, Burssens 2020). The IACOB-family sources agree on v_mac to a median of ≤ 1 km/s per star
+where they overlap (pairwise MAD 3–8 km/s), so each star keeps one value. Three exceptions to the priority order:
+
+* a v_mac that Simón-Díaz et al. (2017) give only as an upper limit is replaced by a measured value of the same star
+  from de Burgos et al. (2024; 10 stars) or Holgado et al. (2022; 8 stars);
+* the same star listed under different names (component suffixes such as "A", "AB", "AaAb") is kept once: entries
+  whose names agree without the suffix and whose positions agree within 10″ are merged (6 stars). Distinct components
+  of visual multiples (e.g. HD 101545 A and B, HD 93129 AaAb and B) stay separate;
+* one Holgado (2018) star whose T_eff is published only as a limit (HD 151804) is not used.
+
+Every value in the table was checked against the VizieR source tables (no differences).
 
 | Source | VizieR | Stars used | Notes |
 |---|---|---|---|
-| Simón-Díaz et al. 2017, A&A 597, A22 | `J/A+A/597/A22` | 382 | O and B stars; T_eff and log ℒ as published; v sin i from the Fourier transform (FT) method; **126 v_mac are upper limits** |
-| de Burgos et al. 2024, A&A 687, A228 | `J/A+A/687/A228` | 376 | B supergiants; log ℒ from the published T_eff and log g |
-| Holgado et al. 2018, A&A 613, A65 | `J/A+A/613/A65` | 62 | O stars; log ℒ from the published T_eff and log g |
-| Holgado et al. 2022, A&A 665, A150 | `J/A+A/665/A150` | 58 | O stars not in the sources above; log ℒ as published |
-| Burssens et al. 2020, A&A 639, A81 | `J/A+A/639/A81` | 12 | adopts IACOB values |
+| Simón-Díaz et al. 2017, A&A 597, A22 | `J/A+A/597/A22` | 364 | O and B stars; T_eff and log ℒ as published; v sin i from the Fourier transform (FT) method; **108 v_mac are upper limits** |
+| de Burgos et al. 2024, A&A 687, A228 | `J/A+A/687/A228` | 386 | B supergiants; log ℒ from the published T_eff and log g |
+| Holgado et al. 2018, A&A 613, A65 | `J/A+A/613/A65` | 58 | O stars; log ℒ from the published T_eff and log g (not corrected for centrifugal acceleration) |
+| Holgado et al. 2022, A&A 665, A150 | `J/A+A/665/A150` | 72 | O stars not in the sources above; log ℒ as published (from the centrifugally corrected log g) |
+| Burssens et al. 2020, A&A 639, A81 | `J/A+A/639/A81` | 10 | adopts IACOB values |
 
 **Macroturbulence.** v_mac is the radial-tangential macroturbulent velocity ζ (Gray's model, equal radial and tangential
 fractions), fitted together with v sin i to the profile of a metal line (or He line in the hottest stars) at high
 resolution (R ≈ 25 000–85 000).
 
-**Upper limits.** Simón-Díaz et al. (2017) flag 126 of their v_mac values as upper limits (column
-`vmac_upper_limit` = 1). These are mostly faster rotators (median v sin i 112 km/s, against 51 km/s for measured
-values) where macroturbulence cannot be separated from rotation. They are kept in the table and in the main fit
-(Section 3).
+**Upper limits.** Simón-Díaz et al. (2017) flag 126 of their v_mac values (for the stars used here) as upper limits;
+18 are replaced by measurements from later papers (above), leaving 108 (column `vmac_upper_limit` = 1). These are
+mostly faster rotators (median v sin i 103 km/s, against 52 km/s for measured values) where macroturbulence cannot be
+separated from rotation. They are kept in the table and in the main fit (Section 3).
+
+**Offsets between sources.** For the 101 stars in both Simón-Díaz (2017) and de Burgos (2024), the same T_eff comes
+with a log ℒ lower by 0.10 dex (MAD 0.06) in Simón-Díaz (2017), i.e. a higher log g. This is within the 0.10 dex
+error adopted below, but systematic. v_mac and v sin i agree.
 
 **Spectroscopic luminosity.** The IACOB papers give the spectroscopic luminosity ℒ = T_eff⁴/g rather than L, because
 it needs no distance. We use log(ℒ/ℒ☉) = 4 log T_eff − log g − log(5777⁴/27 400), with g in cgs. For a star of
@@ -55,15 +68,21 @@ Each star's luminosity L, current mass, initial mass, radius and evolutionary st
    For each track we compute log ℒ from its T_eff and g with the normalisation above, and the fractional main-sequence
    age τ = age / age(TAMS, EEP 454).
 4. **Matching.** Each star is assigned the nearest model point in the plane (log T_eff / 0.02, log ℒ / 0.10), i.e.
-   distances measured in units of typical 1σ errors (0.02 dex in log T_eff, about ±1000–1500 K; 0.10 dex in log ℒ).
+   distances measured in units of typical 1σ errors (0.02 dex in log T_eff, about 700–2300 K between 15 and 50 kK;
+   0.10 dex in log ℒ).
    Column `mist_dist` is that distance (median 0.04, maximum 0.46, so every star lies within the track coverage).
 5. **Uncertainties.** 300 Monte Carlo draws per star, perturbing log T_eff and log ℒ by those 1σ errors and matching
    again. Columns `*_p16` and `*_p84` give the 16th and 84th percentiles. The median half-width of the log L
    interval is 0.14 dex. Column `frac_MS` is the fraction of draws that land on the main sequence. Near the TAMS a
    star can match either a main-sequence or a post-main-sequence point; L differs little between the two, but the
    mass and τ can.
-6. **Check.** The same positions were matched earlier with an inverse-distance average of the 8 nearest track points.
-   The two give the same log L to a median of 0.000 dex (MAD 0.008 dex) and the same initial mass to 0.01 dex.
+6. **Checks.** The same positions were matched earlier with an inverse-distance average of the 8 nearest track
+   points; the two give the same log L to a median of 0.000 dex (MAD 0.008 dex) and the same initial mass to 0.01 dex.
+   The identity L = ℒ M holds at the matched points to 0.002 dex (a constant from the solar T_eff convention).
+   Interpolation between tracks is accurate to ≤ 0.02 dex in log L on the main sequence (one track left out and
+   interpolated from its neighbours); dropping every other track changes the stars' log L by ≤ 0.007 dex for 84%
+   of them (0.05 dex at most). Non-rotating MIST tracks change log L by a median of +0.007 dex (16–84%: −0.01 to
+   +0.03) and leave the binned v_mac medians unchanged.
 
 What this luminosity is not: it is not based on distances or photometry. It assumes the star follows a single,
 solar-metallicity, moderately rotating track, and its error is set mainly by the error in log g (which enters log ℒ
@@ -75,21 +94,24 @@ compare them directly with `logL_mist`, or place your stars on (log T_eff, log �
 **Model.** Gaussian-process regression of y = log₁₀ v_mac on x = (log T_eff, log L_MIST) for all 890 stars
 (scikit-learn). Inputs and y are standardised; kernel = constant × Matérn (ν = 5/2, one length scale per axis) + white
 noise. The white-noise term absorbs the real star-to-star scatter, so the GP mean is the smooth mean relation.
-Fitted hyperparameters: length scales 2.1 (log T_eff) and 1.6 (log L) in standard deviations, i.e. a smooth
-surface; white noise 0.19 dex. The rms residual of the stars about the mean is 0.19 dex.
+Fitted hyperparameters: length scales 2.2 (log T_eff) and 1.6 (log L) in standard deviations, i.e. a smooth
+surface; white noise 0.19 dex. The rms residual of the stars about the mean is 0.19 dex. Residuals averaged in cells
+of 0.05 dex in log T_eff and 0.25 dex in log L stay within ±0.06 dex of zero.
 
-**Intrinsic scatter.** The scatter is not uniform: it is about 0.09 dex above log L = 5 and 0.17–0.18 dex below 4.5,
+**Observed scatter.** The scatter is not uniform: it is about 0.09 dex above log L = 5 and 0.17–0.18 dex below 4.5,
 largest among the mid-B stars (log T_eff 4.15–4.3, log L 3–4). `logvmac_scatter_local` is a robust standard
 deviation (1.4826 × MAD) of the residuals of the 50 nearest stars, distances measured in units of (0.06 dex in
-log T_eff, 0.25 dex in log L).
+log T_eff, 0.25 dex in log L). It includes the measurement errors of v_mac (typically 10–20%, i.e. 0.04–0.08 dex)
+and, at low luminosity, the upper limits, so the true star-to-star scatter is smaller, most of all above
+log L = 5, where measurement error may account for much of it.
 
 | log L | Stars | v_mac 16 / 50 / 84 % (km/s) | Local scatter (dex) |
 |---|---|---|---|
 | 3.0–4.0 | 136 | 16 / 24 / 47 | 0.18 |
-| 4.0–4.5 | 63 | 15 / 27 / 46 | 0.17 |
-| 4.5–5.0 | 162 | 29 / 44 / 59 | 0.13 |
-| 5.0–5.5 | 244 | 50 / 64 / 84 | 0.09 |
-| 5.5–6.2 | 255 | 58 / 79 / 98 | 0.09 |
+| 4.0–4.5 | 62 | 16 / 28 / 46 | 0.17 |
+| 4.5–5.0 | 165 | 28 / 44 / 59 | 0.13 |
+| 5.0–5.5 | 237 | 50 / 63 / 81 | 0.09 |
+| 5.5–6.2 | 260 | 57 / 80 / 100 | 0.09 |
 
 **Grid columns** (`vmac_fit_grid.csv`; log T_eff 4.000–4.700 in steps of 0.005, log L 2.40–6.40 in steps of 0.02):
 
@@ -98,8 +120,8 @@ log T_eff, 0.25 dex in log L).
 | `logTeff`, `logL` | grid point (K, L☉) |
 | `logvmac_mean` | mean relation, log₁₀(v_mac / km s⁻¹) |
 | `logvmac_mean_err` | 1σ uncertainty of the mean relation (dex), white noise excluded |
-| `logvmac_scatter_local` | intrinsic star-to-star scatter at that position (dex) |
-| `logvmac_mean_detections_only` | same fit without the 126 upper limits |
+| `logvmac_scatter_local` | observed star-to-star scatter at that position (dex), measurement errors included |
+| `logvmac_mean_detections_only` | same fit without the 108 upper limits |
 | `n_support` | stars within the ellipse of semi-axes 0.06 dex (log T_eff) and 0.25 dex (log L) |
 | `ok` | 1 where `n_support` ≥ 3; outside, the fit is an extrapolation and should not be used |
 
@@ -107,7 +129,8 @@ log T_eff, 0.25 dex in log L).
 
 log v_mac ~ Normal( `logvmac_mean`, √(`logvmac_mean_err`² + `logvmac_scatter_local`²) ),
 
-which reproduces both the trend and the spread at that position:
+which reproduces both the trend and the observed spread at that position (slightly wider than the true spread; see
+above):
 
 ```python
 import numpy as np, pandas as pd
@@ -127,10 +150,10 @@ def draw_vmac(logTeff, logL, rng=np.random.default_rng()):
 ## 4. Caveats
 
 * **Slow rotators.** v_mac can be separated from rotation only when v sin i is not much larger than v_mac, so the
-  sample is dominated by slow rotators (median v sin i 53 km/s). At fixed position, the residuals rise slightly with
-  v sin i (+0.05 dex per dex in v sin i, Spearman ρ = +0.19), so extrapolating from 50 to 200 km/s adds about
-  +0.03 dex. This is within the scatter, but untested for the fastest rotators.
-* **Upper limits.** Treating the 126 limits as values lowers the mean relation by a median of 0.04 dex at
+  sample is dominated by slow rotators (median v sin i 55 km/s). At fixed position, the residuals rise slightly with
+  v sin i (+0.06 dex per dex in v sin i, Spearman ρ = +0.19), so extrapolating from 50 to 200 km/s adds about
+  +0.04 dex. This is within the scatter, but untested for the fastest rotators.
+* **Upper limits.** Treating the 108 limits as values lowers the mean relation by a median of 0.04 dex at
   log L 3.5–4.5 (at most 0.12 dex) and by ≤ 0.04 dex above 4.5, compared with fitting measured values only.
   Measured values alone are biased high, so the truth lies between the two columns.
 * **Coverage.** Good above log L ≈ 4.3 and for B stars at log L 3–4; sparse for hot stars below log L ≈ 4.3
@@ -151,10 +174,10 @@ def draw_vmac(logTeff, logL, rng=np.random.default_rng()):
 | `sptype` | | Spectral type |
 | `vmac_source` | | Source of v_mac, v sin i and T_eff (Section 1) |
 | `Teff`, `logTeff` | K, dex | Effective temperature (Simón-Díaz 2017 give log T_eff to 0.01 dex; `Teff` is computed from it) |
-| `logg` | cgs | Surface gravity, where published (de Burgos 2024, Holgado 2018/2022) |
+| `logg` | cgs | Surface gravity, where published (de Burgos 2024, Holgado 2018; Holgado 2022 centrifugally corrected) |
 | `logLspec` | ℒ☉ | Spectroscopic luminosity log(T_eff⁴/g) in solar units |
 | `vmac` | km/s | Radial-tangential macroturbulence ζ |
-| `vmac_upper_limit` | | 1 = upper limit (Simón-Díaz 2017) |
+| `vmac_upper_limit` | | 1 = upper limit (Simón-Díaz 2017, where no later measurement exists) |
 | `vsini` | km/s | Projected rotational velocity from the same source |
 | `logL_mist`, `logL_mist_p16`, `logL_mist_p84` | L☉ | Luminosity from MIST and its 16–84 % interval |
 | `Mini_mist`, `Mini_mist_p16`, `Mini_mist_p84` | M☉ | Initial mass and its 16–84 % interval |
@@ -165,7 +188,7 @@ def draw_vmac(logTeff, logL, rng=np.random.default_rng()):
 | `frac_MS` | | Fraction of Monte Carlo draws on the main sequence |
 | `mist_dist` | | Distance to the matched model point in units of (0.02 dex, 0.10 dex) |
 | `logvmac_fit` | dex | The fit (Section 3) at the star's position |
-| `logvmac_scatter_local` | dex | Local intrinsic scatter at the star's position |
+| `logvmac_scatter_local` | dex | Local observed scatter at the star's position |
 
 ## 6. Rebuilding
 

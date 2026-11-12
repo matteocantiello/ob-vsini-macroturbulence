@@ -34,7 +34,8 @@ from the macroturbulence term) with wider scatter. A pile-up of fitted values ne
 pipeline itself and has to be calibrated empirically.
 
 **4. Expected v_mac.** Among Galactic OB stars v_mac rises from ≈ 20–30 km/s at log L/L☉ = 3–4.5 to ≈ 60–80 km/s
-above log L/L☉ = 5, with a star-to-star scatter of 0.09 dex at high luminosity and ≈ 0.18 dex below log L/L☉ = 4.5.
+above log L/L☉ = 5, with an observed star-to-star scatter (measurement errors included) of 0.09 dex at high
+luminosity and ≈ 0.18 dex below log L/L☉ = 4.5.
 `vmac_table/vmac_fit_grid.csv` gives the mean relation, its uncertainty and the scatter on a grid, with a sampling
 snippet in `vmac_table/README.md`.
 

@@ -2,15 +2,15 @@
 
 Inputs
   input/macroturbulence_evol.csv       832 IACOB-family stars (merged; see README)
-  input/macroturbulence_catalog.csv    the full merged catalogue (used to avoid duplicates with Holgado+2022)
-  input/vizier/holgado22.tsv           Holgado+2022 O stars (58 added)
+  input/macroturbulence_catalog.csv    the full merged catalogue (927 stars, incl. those without log g; not used)
+  input/vizier/holgado22.tsv           Holgado+2022 O stars (those not in the sources above are added)
   input/vizier/J_A_A_*.tsv             VizieR source tables with positions (coordinates and upper-limit flags)
   MIST v1.2 EEP tracks, [Fe/H] = 0, v/v_crit = 0.4: set the environment variable MIST_DIR to the unpacked folder
     https://mist.science/data/tarballs_v1.2/MIST_v1.2_feh_p0.00_afe_p0.0_vvcrit0.4_EEPS.txz
 
 Outputs (this directory)
   iacob_vmac_mist.csv      one row per star
-  vmac_fit_grid.csv        GP fit of log v_mac on (log T_eff, log L): mean, uncertainty, intrinsic scatter, support
+  vmac_fit_grid.csv        GP fit of log v_mac on (log T_eff, log L): mean, uncertainty, observed scatter, support
   fig_vmac_table.{pdf,png}
 
 Run:  MIST_DIR=/path/to/MIST_..._EEPS python build_vmac_table.py
@@ -57,14 +57,44 @@ N_MC = 300
 
 
 # ------------------------------------------------------------------------------------------- stars
+SOURCE_PRIORITY = ['SimonDiaz2017', 'deBurgos2024', 'Holgado2018', 'Holgado2022', 'Burssens2020']
+
+
+def base_key(key):
+    """star_key without a trailing component suffix ('HD14633AAAB', 'HD36861A' -> 'HD14633', 'HD36861').
+    Other components ('HD101545B', 'HD5005D') keep their letter and stay distinct."""
+    return re.sub(r'(?<=\d)(AAAB|AAB|AB|AA|A)$', '', key)
+
+
 def load_stars():
     V = pd.read_csv(os.path.join(DATA, 'macroturbulence_evol.csv'))
     V = V[np.isfinite(V.vmac) & (V.vmac > 0) & np.isfinite(V.logL_sp)]
+    # Holgado+2018 rows whose T_eff or log g is published only as a limit are not used
+    h18 = vizier_blocks(os.path.join(RAWV, 'J_A_A_613_A65.tsv'))[1]
+    lim18 = set(h18.Target[(h18.l_Teff.fillna('') != '') | (h18.l_logg.fillna('') != '')].map(star_key))
+    V = V[~((V.vmac_src == 'Holgado2018') & V.key.map(star_key).isin(lim18))]
     a = pd.DataFrame(dict(star=V.key, sptype=V.SpType, vmac_source=V.vmac_src, logTeff=V.logTeff_sp,
                           logg=V.logg_sp, logLspec=V.logL_sp, vmac=V.vmac, vsini=V.vsini))
+    a['key'] = a.star.map(star_key)
+    # Simon-Diaz+2017 flags v_mac upper limits (l_vmac = '<'); the merged catalogue does not carry the flag
+    sd = vizier_blocks(os.path.join(RAWV, 'J_A_A_597_A22.tsv'))[0]
+    lim = set(sd.Target[sd.l_vmac.fillna('') == '<'].map(star_key))
+    a['vmac_upper_limit'] = ((a.vmac_source == 'SimonDiaz2017') & a.key.isin(lim)).astype(int)
+    # an upper limit is replaced by the de Burgos+2024 measurement of the same star where there is one
+    db = vizier_blocks(os.path.join(RAWV, 'J_A_A_687_A228.tsv'))[0]
+    db = db[(db.vmac > 0) & (db.Teff > 0) & np.isfinite(db.logg)].copy(); db['key'] = db.Name.map(star_key)
+    db = db.drop_duplicates('key').set_index('key')
+    rep = (a.vmac_upper_limit == 1) & a.key.isin(db.index)
+    d = db.loc[a.key[rep]]
+    a.loc[rep, 'sptype'] = d.SpC.values; a.loc[rep, 'vmac_source'] = 'deBurgos2024'
+    a.loc[rep, 'logTeff'] = np.log10(d.Teff.values); a.loc[rep, 'logg'] = d.logg.values
+    a.loc[rep, 'logLspec'] = 4 * np.log10(d.Teff.values) - d.logg.values - LOG_ELL_SUN
+    a.loc[rep, 'vmac'] = d.vmac.values; a.loc[rep, 'vsini'] = d.vsini.values; a.loc[rep, 'vmac_upper_limit'] = 0
+    print(f'upper limits replaced by de Burgos+2024 measurements: {rep.sum()}')
+    # Holgado+2022 O stars not already present with a measured v_mac (matched on the name without component
+    # suffix); a star present only as an upper limit is resolved in dedupe()
     h = vz_read_tsv(os.path.join(RAWV, 'holgado22.tsv'))
-    have = set(pd.read_csv(os.path.join(DATA, 'macroturbulence_catalog.csv')).key.map(star_key))
-    h = h[~h.Target.map(star_key).isin(have)].copy()
+    h = h[~h.Target.map(star_key).map(base_key).isin(set(a.key[a.vmac_upper_limit == 0].map(base_key)))].copy()
     vm = pd.to_numeric(h.vmacro, errors='coerce'); T = pd.to_numeric(h.Teff, errors='coerce') * 1e3   # kK
     L = pd.to_numeric(h.logLsp, errors='coerce')
     ok = (np.isfinite(vm) & (vm > 0) & np.isfinite(T) & np.isfinite(L)
@@ -72,13 +102,24 @@ def load_stars():
     b = pd.DataFrame(dict(star=h.Target[ok].str.strip(), sptype=(h.SpType[ok].astype(str) + ' ' + h.LumClass[ok].astype(str)).str.strip(),
                           vmac_source='Holgado2022', logTeff=np.log10(T[ok]), logg=pd.to_numeric(h.loggt, errors='coerce')[ok],
                           logLspec=L[ok], vmac=vm[ok], vsini=pd.to_numeric(h.vsini, errors='coerce')[ok]))
-    S = pd.concat([a, b], ignore_index=True)
-    S['key'] = S.star.map(star_key)
-    # Simon-Diaz+2017 flags v_mac upper limits (l_vmac = '<'); the merged catalogue does not carry the flag
-    sd = vizier_blocks(os.path.join(RAWV, 'J_A_A_597_A22.tsv'))[0]
-    lim = set(sd.Target[sd.l_vmac.fillna('') == '<'].map(star_key))
-    S['vmac_upper_limit'] = ((S.vmac_source == 'SimonDiaz2017') & S.key.isin(lim)).astype(int)
-    return S
+    b['key'] = b.star.map(star_key); b['vmac_upper_limit'] = 0
+    return pd.concat([a, b], ignore_index=True)
+
+
+def dedupe(S, max_sep=10.0):
+    """Drop repeated entries of one star: same name without component suffix and within max_sep arcsec.
+    Keep a measured v_mac over an upper limit, then the earlier source in SOURCE_PRIORITY."""
+    S = S.copy(); S['_b'] = S.key.map(base_key)
+    S['_rank'] = S.vmac_upper_limit * 10 + S.vmac_source.map(SOURCE_PRIORITY.index)
+    drop = []
+    for _, g in S[S._b.duplicated(keep=False)].groupby('_b'):
+        g = g.sort_values('_rank'); r0 = g.iloc[0]
+        for i, r in g.iloc[1:].iterrows():
+            c = np.cos(np.radians(r0.dec))
+            sep = 3600 * np.hypot((r.ra - r0.ra) * c, r.dec - r0.dec)
+            if sep < max_sep:
+                drop.append(i); print(f'  duplicate: keep {r0.star} ({r0.vmac_source}), drop {r.star} ({r.vmac_source}), {sep:.1f}"')
+    return S.drop(index=drop).drop(columns=['_b', '_rank']).reset_index(drop=True)
 
 
 def vizier_blocks(path):
@@ -177,6 +218,7 @@ if __name__ == '__main__' and 'stage1' in sys.argv:
     pos = coordinates(); S['ra'] = S.key.map(lambda k: pos.get(k, (np.nan, np.nan))[0])
     S['dec'] = S.key.map(lambda k: pos.get(k, (np.nan, np.nan))[1])
     print('with coordinates', np.isfinite(S.ra).sum(), '; missing:', list(S.star[~np.isfinite(S.ra)])[:30])
+    S = dedupe(S); print('after de-duplication', len(S))
     G = mist_grid(); print('MIST grid points', len(G), 'masses', G.M_ini.min(), G.M_ini.max())
     P = place(S, G); S = pd.concat([S, P], axis=1)
     old = pd.read_csv(os.path.join(DATA, 'macroturbulence_evol.csv')).set_index('key')
@@ -262,7 +304,7 @@ def figure(S, Gr, G):
         a.set_xlim(4.72, 4.00); a.set_ylim(2.5, 6.2); a.minorticks_on(); a.set_xlabel(r'Effective temperature $\log T_\mathrm{eff}~(\mathrm{K})$')
     ax[0].set_ylabel(r'Luminosity $\log L~(L_\odot)$'); ax[1].set_yticklabels([]); ax[2].set_yticklabels([])
     for (x0, x1), cm, nn, lab in [((0.07, 0.65), cmap, norm, r'(a) stars and (b) GP mean, $v_\mathrm{mac}~(\mathrm{km\,s^{-1}})$'),
-                                  ((0.68, 0.98), matplotlib.colormaps['viridis'], n2, r'(c) local intrinsic scatter of $\log v_\mathrm{mac}$ (dex)')]:
+                                  ((0.68, 0.98), matplotlib.colormaps['viridis'], n2, r'(c) local observed scatter of $\log v_\mathrm{mac}$ (dex)')]:
         cax = fig.add_axes([x0, 0.86, x1 - x0, 0.025])
         cb = matplotlib.colorbar.ColorbarBase(cax, cmap=cm, norm=nn, orientation='horizontal', ticklocation='top')
         cb.set_label(lab, fontsize=7); cb.ax.tick_params(labelsize=6)
@@ -276,6 +318,7 @@ def figure(S, Gr, G):
 if __name__ == '__main__' and 'stage1' not in sys.argv:
     S = load_stars(); pos = coordinates()
     S['ra'] = S.key.map(lambda k: pos.get(k, (np.nan, np.nan))[0]); S['dec'] = S.key.map(lambda k: pos.get(k, (np.nan, np.nan))[1])
+    S = dedupe(S); print('stars', len(S), S.vmac_source.value_counts().to_dict(), 'upper limits', S.vmac_upper_limit.sum())
     G = mist_grid(); S = pd.concat([S, place(S, G)], axis=1)
     gp, predict, white = fit_gp(S)
     det = S.vmac_upper_limit.values == 0
